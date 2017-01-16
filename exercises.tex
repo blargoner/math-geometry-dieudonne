@@ -3,7 +3,17 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
+\newcommand{\iso}{\cong}
+
 \newcommand{\sect}{\cap}
+\newcommand{\after}{\circ}
+
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{\mathbf{GL}}
+\DeclareMathOperator{\GA}{\mathbf{GA}}
+
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\kerz}[1]{\inv{#1}(0)}
 
 % Theorems
 \theoremstyle{definition}
@@ -30,6 +40,44 @@ Let \(V,W\) be a pair of supplementary subspaces of~\(E\). Every subspace~\(U\) 
 \end{exer}
 \begin{proof}
 If \(u\in U\), then \(u=v+w\) for some \(v\in V\) and \(w\in W\), and \(w=u-v\in U\). So \(U=V+(U\sect W)\), and \(V\sect U\sect W=\{0\}\).
+\end{proof}
+
+\subsection*{Section~2}
+\begin{exer}[1]
+If \(p,q\)~are the projections corresponding to a direct sum \(E=V+W\), then \(p,q\in\End(E)\) are such that \(p^2=p\), \(q^2=q\), and \(p+q=1\). Conversely, if \(p\in\End(E)\) is such that \(p^2=p\), then \(E=p(E)+\kerz{p}\) is a direct sum. Moreover, if \(q=1-p\), then \(q^2=q\), \(q(E)=\kerz{p}\), and \(\kerz{q}=p(E)\).
+\end{exer}
+\begin{proof}
+For the forward direction, we know \(p,q\in\End(E)\) and \(p+q=1\) (3.2.2). It follows that \(p^2=p\after(1-q)=p-pq=p\) and \(q^2=(1-p)^2=1-p=q\).
+
+For the converse, \(p+q=1\), so \(E=p(E)+q(E)\). Also \(pq=p-p^2=0\), so \(p(E)\sect q(E)=\{0\}\) and \(q(E)\subseteq\kerz{p}\). If \(x\in\kerz{p}\), then \(q(x)=x\), so \(x\in q(E)\). Hence \(q(E)=\kerz{p}\) and similarly \(\kerz{q}=p(E)\). Finally \(q^2=q\) as above.
+\end{proof}
+
+\begin{exer}[2]
+If \(W\) and~\(W'\) are both supplementary to~\(V\) in~\(E\), then \(W\) and~\(W'\) are isomorphic.
+\end{exer}
+\begin{proof}
+If \(p\)~is the projection of~\(E\) onto~\(W'\), then the restriction of~\(p\) to~\(W\) is an isomorphism from~\(W\) to~\(W'\).
+\end{proof}
+
+\begin{exer}[3]
+If \(E=V+W\) is a direct sum with inclusions \(i:V\to E\) and \(j:W\to E\), and \(v:V\to F\) and \(w:W\to F\) are linear maps, then there is a unique linear map \(u:E\to F\) with \(u\after i=v\) and \(u\after j=w\).
+\end{exer}
+\begin{proof}
+If \(p,q\) are the projections on \(V,W\) respectively, then \(u=v\after p+w\after q\).
+\end{proof}
+
+\begin{exer}[11]
+\(\GA(E)/E\iso\GL(E)\).
+\end{exer}
+\begin{proof}
+Define \(\varphi:\GA(E)\to\GL(E)\) by \(\varphi(t_a\after v)=v\). Note that \(\varphi\)~is well-defined by~(3.2.17), \(\varphi\)~is a homomorphism by~(3.2.19), and \(\varphi\)~is clearly surjective. Also \(\varphi(u)=1\) if and only if \(u\)~is a translation, so \(\ker\varphi=T(E)\), the normal subgroup of translations. It follows that \(\GA(E)/T(E)\iso\GL(E)\). Finally, the mapping \(a\mapsto t_a\) is an isomorphism \(E\iso T(E)\) from the additive group~\(E\).
+\end{proof}
+
+\begin{exer}[13]
+If \(u:E\to F\) is affine and \(L\)~is a variety in~\(F\), then \(\inv{u}(L)\)~is empty or a variety in~\(E\).
+\end{exer}
+\begin{proof}
+If \(a\in\inv{u}(L)\) and \(L_0\)~is the direction of~\(L\), then \(L=u(a)+L_0\) and hence \(\inv{u}(L)=a+\inv{u}(L_0)\).
 \end{proof}
 
 % References
