@@ -3,6 +3,8 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
+\newcommand{\sect}{\cap}
+
 % Theorems
 \theoremstyle{definition}
 \newtheorem*{exer}{Exercise}
@@ -20,6 +22,15 @@
 
 \section*{Introduction}
 This document contains notes and exercises from~\cite{dieudonne}.
+
+\section*{Chapter~III}
+\subsection*{Section~1}
+\begin{exer}[4]
+Let \(V,W\) be a pair of supplementary subspaces of~\(E\). Every subspace~\(U\) containing~\(V\) is the direct sum of~\(V\) with~\(U\sect W\).
+\end{exer}
+\begin{proof}
+If \(u\in U\), then \(u=v+w\) for some \(v\in V\) and \(w\in W\), and \(w=u-v\in U\). So \(U=V+(U\sect W)\), and \(V\sect U\sect W=\{0\}\).
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
