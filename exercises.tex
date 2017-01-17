@@ -3,6 +3,8 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
+\newcommand{\R}{\mathbf{R}}
+
 \newcommand{\iso}{\cong}
 
 \newcommand{\sect}{\cap}
@@ -78,6 +80,30 @@ If \(u:E\to F\) is affine and \(L\)~is a variety in~\(F\), then \(\inv{u}(L)\)~i
 \end{exer}
 \begin{proof}
 If \(a\in\inv{u}(L)\) and \(L_0\)~is the direction of~\(L\), then \(L=u(a)+L_0\) and hence \(\inv{u}(L)=a+\inv{u}(L_0)\).
+\end{proof}
+
+\subsection*{Section~3}
+\begin{exer}[3]
+A necessary and sufficient condition for a nonempty subset~\(V\) of a vector space to be a variety is that for all pairs~\(x,y\) of distinct points of~\(V\), the line~\(D_{xy}\) is contained in~\(V\).
+\end{exer}
+\begin{proof}
+The condition is necessary by~(3.3.2).
+
+If the condition holds, choose \(v\in V\) and let \(V_0=-v+V\). We claim \(V_0\)~is a subspace, from which it follows that \(V=v+V_0\) is a variety. First, \(0=-v+v\in V_0\). If \(x\in V_0\) and \(x\ne 0\), then \(v+x\in V\) and \(v+x\ne v\), so \(D_{v,v+x}=\{\,v+\xi x\mid\xi\in\R\,\}\subseteq V\). It follows that \(\xi x\in V_0\) for all \(\xi\in\R\). If also \(y\in V_0\) and \(y\ne x\), then \(D_{v+x,v+y}\subseteq V\), so in particular \(v+2^{-1}(x+y)\in V\) and \(2^{-1}(x+y)\in V_0\). By the previous result, it then follows that \(x+y\in V_0\). Therefore \(V_0\)~is a subspace as claimed.
+\end{proof}
+
+\goodbreak
+\begin{exer}[4]\
+\begin{itemize}[itemsep=0pt]
+\item A necessary and sufficient condition for an affine map to be a translation or a homothetic map is that its associated linear map be homothetic.
+\item A necessary and sufficient condition for an affine map to preserve the direction of lines is that it be a translation or a bijective homothetic map.
+\end{itemize}
+\end{exer}
+\begin{proof}\
+\begin{itemize}[itemsep=0pt]
+\item This follows from the equations \(t_a=t_a\after h_1\) and \(h_{a,\lambda}=t_{(1-\lambda)a}\after h_{\lambda}\) and \(t_a\after h_{\lambda}=h_{(1-\lambda)^{-1}a,\lambda}\) (\(\lambda\ne 1\)).
+\item The condition is sufficient because such a map has the form \(t_a\after h_{\lambda}\) with \(\lambda\ne 0\), which clearly preserves the direction of lines. Conversely, suppose \(u=t_a\after v\) preserves the direction of lines. If \(x\ne 0\), let \(D\)~be the vector line through~\(x\). Then \(v(D)=D\), so \(v(x)=\lambda x\) for some \(\lambda\in\R\) with \(\lambda\ne0\), and in fact \(v(y)=\lambda y\) for all \(y\in D\). We claim \(v=h_{\lambda}\), from which the result follows. If \(y\not\in D\), then by considering the vector line~\(D'\) through~\(y\) we have \(v(y)=\mu y\) for some \(\mu\in\R\). Now \(v(D_{xy})=D_{v(x)v(y)}=D_{\lambda x,\mu y}\), and since \(v\)~preserves direction there is \(\xi\in\R\) with \(\mu y-\lambda x=\xi(y-x)\), or \((\mu-\xi)y=(\lambda-\xi)x\). Since \(y\not\in D\), this implies \(\mu=\xi=\lambda\). Therefore \(v=h_{\lambda}\) as claimed.\qedhere
+\end{itemize}
 \end{proof}
 
 % References
