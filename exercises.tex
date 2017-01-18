@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
 \newcommand{\R}{\mathbf{R}}
+\newcommand{\Rnz}{\R^*}
 
 \newcommand{\iso}{\cong}
 
@@ -97,12 +98,37 @@ If the condition holds, choose \(v\in V\) and let \(V_0=-v+V\). We claim \(V_0\)
 \begin{itemize}[itemsep=0pt]
 \item A necessary and sufficient condition for an affine map to be a translation or a homothetic map is that its associated linear map be homothetic.
 \item A necessary and sufficient condition for an affine map to preserve the direction of lines is that it be a translation or a bijective homothetic map.
+\item If \(u_1,u_2\)~are translations or homothetic maps, then so is~\(u_1\after u_2\).
+\item If \(u_1,u_2\) and~\(u_1\after u_2\) are homothetic maps with ratios not equal to 1, their centers are collinear. If instead \(u_1\after u_2\)~is a translation, then it is either the identity or a translation in the direction of the line through the centers of \(u_1\) and~\(u_2\).
+\item If \(v\in\GA(E)\), then \(v\after h_{a,\lambda}\after\inv{v}=h_{v(a),\lambda}\).
+\item The subset~\(H(E)\) of translations and homothetic maps in~\(\GA(E)\) forms a subgroup, and \(H(E)/E\iso\Rnz\).
 \end{itemize}
 \end{exer}
 \begin{proof}\
 \begin{itemize}[itemsep=0pt]
 \item This follows from the equations \(t_a=t_a\after h_1\) and \(h_{a,\lambda}=t_{(1-\lambda)a}\after h_{\lambda}\) and \(t_a\after h_{\lambda}=h_{(1-\lambda)^{-1}a,\lambda}\) (\(\lambda\ne 1\)).
-\item The condition is sufficient because such a map has the form \(t_a\after h_{\lambda}\) with \(\lambda\ne 0\), which clearly preserves the direction of lines. Conversely, suppose \(u=t_a\after v\) preserves the direction of lines. If \(x\ne 0\), let \(D\)~be the vector line through~\(x\). Then \(v(D)=D\), so \(v(x)=\lambda x\) for some \(\lambda\in\R\) with \(\lambda\ne0\), and in fact \(v(y)=\lambda y\) for all \(y\in D\). We claim \(v=h_{\lambda}\), from which the result follows. If \(y\not\in D\), then by considering the vector line~\(D'\) through~\(y\) we have \(v(y)=\mu y\) for some \(\mu\in\R\). Now \(v(D_{xy})=D_{v(x)v(y)}=D_{\lambda x,\mu y}\), and since \(v\)~preserves direction there is \(\xi\in\R\) with \(\mu y-\lambda x=\xi(y-x)\), or \((\mu-\xi)y=(\lambda-\xi)x\). Since \(y\not\in D\), this implies \(\mu=\xi=\lambda\). Therefore \(v=h_{\lambda}\) as claimed.\qedhere
+
+\item The condition is sufficient because such a map has the form \(t_a\after h_{\lambda}\) with \(\lambda\ne 0\), which clearly preserves the direction of lines. Conversely, suppose \(u=t_a\after v\) preserves the direction of lines. If \(x\ne 0\), let \(D\)~be the vector line through~\(x\). Then \(v(D)=D\), so \(v(x)=\lambda x\) for some \(\lambda\in\R\) with \(\lambda\ne0\), and in fact \(v(y)=\lambda y\) for all \(y\in D\). We claim \(v=h_{\lambda}\), from which the result follows. If \(y\not\in D\), then by considering the vector line~\(D'\) through~\(y\) we have \(v(y)=\mu y\) for some \(\mu\in\R\). Now \(v(D_{xy})=D_{v(x)v(y)}=D_{\lambda x,\mu y}\), and since \(v\)~preserves direction there is \(\xi\in\R\) with \(\mu y-\lambda x=\xi(y-x)\), or \((\mu-\xi)y=(\lambda-\xi)x\). Since \(y\not\in D\), this implies \(\mu=\xi=\lambda\). Therefore \(v=h_{\lambda}\) as claimed.
+
+\item If \(u_1=t_a\after h_{\lambda}\) and \(u_2=t_b\after h_{\mu}\), then by~(3.2.19.1), \(u_1\after u_2=t_{a+\lambda b}\after h_{\lambda\mu}\).
+
+\item Write \(u_1=h_{a,\lambda}\), \(u_2=h_{b,\mu}\), and \(u_1\after u_2=h_{c,\nu}\) with \(\lambda,\mu,\nu\ne1\). Then for all~\(x\),
+\[(1-\nu)c+\nu x=(1-\lambda)a+\lambda(1-\mu)b+\lambda\mu x\]
+Taking \(x=0\) and \(x\ne0\) (we assume such exist!) yields \(\nu=\lambda\mu\) and
+\[c=(1-\lambda\mu)^{-1}[(1-\lambda)a+\lambda(1-\mu)b]=(1-\lambda\mu)^{-1}(\lambda-1)(b-a)+b\]
+so that \(a,b,c\) are collinear. If instead \(u_1\after u_2=t_c\), then \(\lambda\mu=1\) and \(c=(\lambda-1)(b-a)\), from which the second result follows.
+
+\item Write \(v=t_b\after w\), where \(w\in\GL(E)\), so that \(\inv{v}=\inv{w}\after t_{-b}\). By repeated application of~(3.2.19.1),
+\begin{align*}
+v\after h_{a,\lambda}\after\inv{v}&=t_b\after w\after t_{(1-\lambda)a}\after h_{\lambda}\after\inv{w}\after t_{-b}\\
+	&=t_{v((1-\lambda)a)}\after w\after h_{\lambda}\after\inv{w}\after t_{-b}\\
+	&=t_{b+(1-\lambda)w(a)}\after h_{\lambda}\after t_{-b}\\
+	&=t_{b+(1-\lambda)w(a)-\lambda b}\after h_{\lambda}\\
+	&=t_{(1-\lambda)v(a)}\after h_{\lambda}\\
+	&=h_{v(a),\lambda}
+\end{align*}
+
+\item First, \(1\in H(E)\). If \(u_1,u_2\in H(E)\), then \(u_1\after u_2\in H(E)\) by a previous item. If \(u_1=t_a\after h_{\lambda}\) with \(\lambda\ne0\), then \(\inv{u_1}=t_{-\lambda^{-1}a}\after h_{\lambda^{-1}}\in H(E)\). Therefore \(H(E)\)~is a subgroup of~\(\GA(E)\). Define \(\varphi:H(E)\to\Rnz\) by \(\varphi(t_a\after h_{\lambda})=\lambda\). Note that \(\varphi\)~is well-defined (since \(E\ne\{0\}\)!), \(\varphi\)~is a homomorphism by a previous item, \(\varphi\)~is surjective, and \(\ker\varphi=T(E)\iso E\). It follows that \(H(E)/E\iso\Rnz\).\qedhere
 \end{itemize}
 \end{proof}
 
