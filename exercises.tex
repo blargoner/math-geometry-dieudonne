@@ -47,7 +47,7 @@ If \(u\in U\), then \(u=v+w\) for some \(v\in V\) and \(w\in W\), and \(w=u-v\in
 
 \subsection*{Section~2}
 \begin{exer}[1]
-If \(p,q\)~are the projections corresponding to a direct sum \(E=V+W\), then \(p,q\in\End(E)\) are such that \(p^2=p\), \(q^2=q\), and \(p+q=1\). Conversely, if \(p\in\End(E)\) is such that \(p^2=p\), then \(E=p(E)+\kerz{p}\) is a direct sum. Moreover, if \(q=1-p\), then \(q^2=q\), \(q(E)=\kerz{p}\), and \(\kerz{q}=p(E)\).
+\emph{Projections and idempotents:} If \(p,q\)~are the projections for a direct sum \(E=V+W\), then \(p,q\in\End(E)\) are such that \(p^2=p\), \(q^2=q\), and \(p+q=1\). Conversely, if \(p\in\End(E)\) is such that \(p^2=p\), then \(E=p(E)+\kerz{p}\) is a direct sum. Moreover, if \(q=1-p\), then \(q^2=q\), \(q(E)=\kerz{p}\), and \(\kerz{q}=p(E)\).
 \end{exer}
 \begin{proof}
 For the forward direction, we know \(p,q\in\End(E)\) and \(p+q=1\) (3.2.2). It follows that \(p^2=p\after(1-q)=p-pq=p\) and \(q^2=(1-p)^2=1-p=q\).
@@ -94,7 +94,8 @@ If the condition holds, choose \(v\in V\) and let \(V_0=-v+V\). We claim \(V_0\)
 \end{proof}
 
 \goodbreak
-\begin{exer}[4]\
+\begin{exer}[4]
+\emph{Translations and homothetic maps:}
 \begin{itemize}[itemsep=0pt]
 \item A necessary and sufficient condition for an affine map to be a translation or a homothetic map is that its associated linear map be homothetic.
 \item A necessary and sufficient condition for an affine map to preserve the direction of lines is that it be a translation or a bijective homothetic map.
@@ -142,7 +143,7 @@ If \(D\)~is the vector line through a vector in \(V-H\), then \(D\)~is supplemen
 \end{proof}
 
 \begin{exer}[6]
-Let \(H\)~be a vector hyperplane in~\(E\) and suppose \(u\in\End(E)\) fixes every element of~\(H\).
+\emph{Dilations and transvections:} Let \(H\)~be a vector hyperplane in~\(E\) and suppose \(u\in\End(E)\) fixes every element of~\(H\).
 \begin{itemize}[itemsep=0pt]
 \item There is \(\gamma\in\R\) unique such that for all \(a\in E-H\), \(u(a)\in\gamma a+H\).
 \item If \(\gamma\ne 1\), then \(\gamma\)~is an eigenvalue of~\(u\) and \(E(\gamma;u)\)~is a line~\(S\) supplementary to \(E(1;u)=H\). A subspace~\(V\) satisfies \(u(V)\subseteq V\) if and only if \(S\subseteq V\) or \(V\subseteq H\). In particular, a vector line~\(D\) satisfies \(u(D)\subseteq D\) if and only if \(D=S\) or \(D\subseteq H\).
