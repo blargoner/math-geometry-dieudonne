@@ -141,6 +141,40 @@ Any vector in the direction of the variety which is not in the direction of the 
 If \(D\)~is the vector line through a vector in \(V-H\), then \(D\)~is supplementary to~\(H\) in~\(E\), so \(D\)~is supplementary to~\(V\sect H\) in~\(V\) (Exercise~3.1.4).
 \end{proof}
 
+\begin{exer}[6]
+Let \(H\)~be a vector hyperplane in~\(E\) and suppose \(u\in\End(E)\) fixes every element of~\(H\).
+\begin{itemize}[itemsep=0pt]
+\item There is \(\gamma\in\R\) unique such that for all \(a\in E-H\), \(u(a)\in\gamma a+H\).
+\item If \(\gamma\ne 1\), then \(\gamma\)~is an eigenvalue of~\(u\) and \(E(\gamma;u)\)~is a line~\(S\) supplementary to \(E(1;u)=H\). A subspace~\(V\) satisfies \(u(V)\subseteq V\) if and only if \(S\subseteq V\) or \(V\subseteq H\). In particular, a vector line~\(D\) satisfies \(u(D)\subseteq D\) if and only if \(D=S\) or \(D\subseteq H\).
+\end{itemize}
+\end{exer}
+\begin{proof}\
+\begin{itemize}[itemsep=0pt]
+\item If \(a\in E-H\), then \(E=\R a+H\), so \(u(a)=\gamma a+t\) for some \(\gamma\in\R\) and \(t\in H\). If \(b\in E\), then \(b=\beta a+h\) for some \(\beta\in\R\) and \(h\in H\), so
+\begin{align*}
+u(b)&=u(\beta a+h)\\
+	&=\beta u(a)+u(h)\\
+	&=\beta(\gamma a+t)+h\\
+	&=\gamma(\beta a+h)+(1-\gamma)h+\beta t\\
+	&=\gamma b+(1-\gamma)h+\beta t\tag{1}
+\end{align*}
+Therefore \(u(b)\in\gamma b+H\). If also \(u(b)\in\gamma'b+H\), then \((\gamma'-\gamma)b\in H\), which implies \(\gamma'=\gamma\) if \(b\not\in H\). Therefore \(\gamma\)~is unique for \(b\not\in H\).
+\item Let \(x=a-(1-\gamma)^{-1}t\). Then \(x\ne 0\) since \(a\not\in H\) and
+\begin{align*}
+u(x)&=u(a-(1-\gamma)^{-1}t)\\
+	&=u(a)-(1-\gamma)^{-1}u(t)\\
+	&=\gamma a+t-(1-\gamma)^{-1}t\\
+	&=\gamma[a-(1-\gamma)^{-1}t]\\
+	&=\gamma x
+\end{align*}
+Therefore \(x\)~is an eigenvector of~\(u\) with eigenvalue~\(\gamma\). Let \(S\)~be the vector line through~\(x\). Then \(S\subseteq E(\gamma;u)\). Conversely if \(b\in E(\gamma;u)\), then \(u(b)=\gamma b\), which implies \((1-\gamma)h+\beta t=0\) in~(1), so \(h=-\beta(1-\gamma)^{-1}t\) and
+\[b=\beta a+h=\beta[a-(1-\gamma)^{-1}t]=\beta x\in S\]
+Therefore \(S=E(\gamma;u)\). By hypothesis \(H\subseteq E(1;u)\). Conversely if \(b\in E(1;u)\), then \(b=u(b)\in\gamma b+H\), so \((1-\gamma)b\in H\), so \(b\in H\). Therefore \(H=E(1;u)\). \(S\)~is supplementary to~\(H\) since \(x\not\in H\).
+
+By hypothesis \(u(V)\subseteq V\) for any subspace \(V\subseteq H\). If \(S\subseteq V\), then \(V=S+V\sect H\) (Exercise~3.1.4), so clearly \(u(V)\subseteq V\). Conversely if \(u(V)\subseteq V\) and \(v\in V-H\), then \(v=s+h\) for some \(s\in S\) with \(s\ne 0\) and \(h\in H\), so \(u(v)=\gamma s+h\) and \(v-u(v)=(1-\gamma)s\in V\), which implies \(s\in V\) and \(S=\R s\subseteq V\).\qedhere
+\end{itemize}
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Linear Algebra and Geometry.} Hermann, 1969.
