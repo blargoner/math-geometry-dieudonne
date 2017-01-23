@@ -145,8 +145,10 @@ If \(D\)~is the vector line through a vector in \(V-H\), then \(D\)~is supplemen
 \begin{exer}[6]
 \emph{Dilations and transvections:} Let \(H\)~be a vector hyperplane in~\(E\) and suppose \(u\in\End(E)\) fixes every element of~\(H\).
 \begin{itemize}[itemsep=0pt]
-\item There is \(\gamma\in\R\) unique such that for all \(a\in E-H\), \(u(a)\in\gamma a+H\).
+\item There is \(\gamma\in\R\) unique such that \(u(a)\in\gamma a+H\) for all \(a\in E-H\).
 \item If \(\gamma\ne 1\), then \(\gamma\)~is an eigenvalue of~\(u\) and \(E(\gamma;u)\)~is a line~\(S\) supplementary to \(E(1;u)=H\). A subspace~\(V\) satisfies \(u(V)\subseteq V\) if and only if \(S\subseteq V\) or \(V\subseteq H\). In particular, a vector line~\(D\) satisfies \(u(D)\subseteq D\) if and only if \(D=S\) or \(D\subseteq H\).
+\item If \(\gamma=1\), and \(g(x)=0\) is an equation of~\(H\), there is \(c\in H\) unique such that \(u(x)=x+g(x)c\) for all \(x\in E\). \(u\)~is bijective. If \(u\ne 1\) (so \(c\ne 0\)), then the line \(T=D_{0c}\) is independent of~\(g\). The scalar~\(1\) is the only eigenvalue of~\(u\) if \(H\ne\{0\}\), and \(E(1;u)=H\) if \(u\ne 1\). If \(u\ne 1\), a subspace~\(V\) satisfies \(u(V)\subseteq V\) if and only if \(T\subseteq V\) or \(V\subseteq H\); in particular, a vector line~\(D\) satisfies \(u(D)=D\) if and only if \(D\subseteq H\).
+\item The set~\(\Gamma(E,H)\) of automorphisms of~\(E\) leaving the hyperplane~\(H\) fixed pointwise is a subgroup of~\(\GL(E)\). The subset~\(\Theta(E,H)\) of transvections is a normal abelian subgroup of~\(\Gamma(E,H)\) isomorphic to~\(H\). \(\Gamma(E,H)/H\iso\Rnz\).
 \end{itemize}
 \end{exer}
 \begin{proof}\
@@ -160,6 +162,7 @@ u(b)&=u(\beta a+h)\\
 	&=\gamma b+(1-\gamma)h+\beta t\tag{1}
 \end{align*}
 Therefore \(u(b)\in\gamma b+H\). If also \(u(b)\in\gamma'b+H\), then \((\gamma'-\gamma)b\in H\), which implies \(\gamma'=\gamma\) if \(b\not\in H\). Therefore \(\gamma\)~is unique for \(b\not\in H\).
+
 \item Let \(x=a-(1-\gamma)^{-1}t\). Then \(x\ne 0\) since \(a\not\in H\) and
 \begin{align*}
 u(x)&=u(a-(1-\gamma)^{-1}t)\\
@@ -172,7 +175,19 @@ Therefore \(x\)~is an eigenvector of~\(u\) with eigenvalue~\(\gamma\). Let \(S\)
 \[b=\beta a+h=\beta[a-(1-\gamma)^{-1}t]=\beta x\in S\]
 Therefore \(S=E(\gamma;u)\). By hypothesis \(H\subseteq E(1;u)\). Conversely if \(b\in E(1;u)\), then \(b=u(b)\in\gamma b+H\), so \((1-\gamma)b\in H\), so \(b\in H\). Therefore \(H=E(1;u)\). \(S\)~is supplementary to~\(H\) since \(x\not\in H\).
 
-By hypothesis \(u(V)\subseteq V\) for any subspace \(V\subseteq H\). If \(S\subseteq V\), then \(V=S+V\sect H\) (Exercise~3.1.4), so clearly \(u(V)\subseteq V\). Conversely if \(u(V)\subseteq V\) and \(v\in V-H\), then \(v=s+h\) for some \(s\in S\) with \(s\ne 0\) and \(h\in H\), so \(u(v)=\gamma s+h\) and \(v-u(v)=(1-\gamma)s\in V\), which implies \(s\in V\) and \(S=\R s\subseteq V\).\qedhere
+By hypothesis \(u(V)\subseteq V\) for any subspace \(V\subseteq H\). If \(S\subseteq V\), then \(V=S+V\sect H\) (Exercise~3.1.4), so clearly \(u(V)\subseteq V\). Conversely if \(u(V)\subseteq V\) and \(v\in V-H\), then \(v=s+h\) for some \(s\in S\) with \(s\ne 0\) and \(h\in H\), so \(u(v)=\gamma s+h\) and \(v-u(v)=(1-\gamma)s\in V\), which implies \(s\in V\) and \(S=\R s\subseteq V\).
+
+\item Fix \(e\in E\) with \(g(e)=1\) and let \(c=u(e)-e\). Since \(u(e)\in e+H\), \(g(c)=0\) and \(c\in H\). Now \(u(x)=x+g(x)c\) holds for \(x=e\), and for \(x\in H\), so by linearity it holds for all \(x\in \R e+H=E\). Note \(c\)~is unique since if \(u(e)=e+g(e)c'\), then \(c'=u(e)-e=c\).
+
+The map \(x\mapsto x-g(x)c\) is clearly the inverse of~\(u\), so \(u\)~is bijective.
+
+If \(h(x)=0\) is another equation of~\(H\), then by the above there exists \(c'\in H\) such that \(u(x)=x+h(x)c'\) for all \(x\in E\). But \(h=\lambda g\) for some \(\lambda\ne 0\) (3.3.6), so \(u(x)=x+g(x)(\lambda c')\) for all \(x\in E\) and \(c=\lambda c'\) by uniqueness of~\(c\). If \(u\ne 1\), then \(T=D_{0c}=D_{0c'}\) is independent of~\(g\).
+
+If \(u(x)=x+g(x)c=\lambda x\), then \((\lambda-1)x\in H\). If \(\lambda\ne 1\), then \(x\in H\), so actually \((\lambda-1)x=0\) and \(x=0\). If \(\lambda=1\), then \(g(x)c=0\), so either \(g(x)=0\) and \(x\in H\), or \(c=0\) and \(u=1\).
+
+As above, \(u(V)\subseteq V\) if \(V\subseteq H\) or \(T\subseteq V\). Conversely if \(u(V)\subseteq V\) and \(x\in V-H\), then \(g(x)\ne 0\) and \(g(x)c=u(x)-x\in V\), so \(c\in V\) and \(T=\R c\subseteq V\).\qedhere
+
+\item \(\Gamma(E,H)\)~is obviously a subgroup of~\(\GL(E)\). Define \(\varphi:\Gamma(E,H)\to\Rnz\) by \(\varphi(u)=\gamma\). Then \(\varphi\)~is a well-defined, surjective homomorphism and \(\ker\varphi=\Theta(E,H)\). It follows that \(\Theta(E,H)\)~is a normal subgroup of~\(\Gamma(E,H)\) and that \(\Gamma(E,H)/\Theta(E,H)\iso\Rnz\). Finally, the mapping \(c\mapsto(x\mapsto x+g(x)c)\) is an isomorphism \(H\iso\Theta(E,H)\), so in particular \(\Theta(E,H)\)~is abelian.
 \end{itemize}
 \end{proof}
 
