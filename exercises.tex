@@ -14,9 +14,11 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
+\DeclareMathOperator{\rank}{rank}
 
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\kerz}[1]{\inv{#1}(0)}
+\newcommand{\dual}[1]{#1^*}
 
 % Theorems
 \theoremstyle{definition}
@@ -189,6 +191,68 @@ As above, \(u(V)\subseteq V\) if \(V\subseteq H\) or \(T\subseteq V\). Conversel
 
 \item \(\Gamma(E,H)\)~is obviously a subgroup of~\(\GL(E)\). Define \(\varphi:\Gamma(E,H)\to\Rnz\) by \(\varphi(u)=\gamma\). Then \(\varphi\)~is a well-defined, surjective homomorphism and \(\ker\varphi=\Theta(E,H)\). It follows that \(\Theta(E,H)\)~is a normal subgroup of~\(\Gamma(E,H)\) and that \(\Gamma(E,H)/\Theta(E,H)\iso\Rnz\). Finally, the mapping \(c\mapsto(x\mapsto x+g(x)c)\) is an isomorphism \(H\iso\Theta(E,H)\), so in particular \(\Theta(E,H)\)~is abelian.
 \end{itemize}
+\end{proof}
+
+\section*{Chapter~IV}
+\subsection*{Section~1}
+\begin{exer}[1]
+If \(t\ne1\) is a transvection in~\(E\), a basis for~\(E\) may be chosen relative to which
+\[M(t)=\begin{pmatrix}
+1&1\\
+0&1
+\end{pmatrix}\]
+Conversely, matrices of the form
+\[B_{12}(\lambda)=\begin{pmatrix}
+1&\lambda\\
+0&1
+\end{pmatrix}
+\qquad
+B_{21}(\lambda)=\begin{pmatrix}
+1&0\\
+\lambda&1
+\end{pmatrix}\]
+are matrices of transvactions relative to some basis~\(\{a_1,a_2\}\). These transvections have the lines \(D_{0a_1}\) and~\(D_{0a_2}\) respectively.
+\end{exer}
+\begin{proof}
+Write \(t(x)=x+g(x)c\), where \(g\in\dual{E}\) with \(g\ne 0\), and \(c\ne 0\) with \(g(c)=0\) (Exercise~3.3.6). Let \(a_1=c\) and choose~\(a_2\) such that \(g(a_2)=1\). Then \(\{a_1,a_2\}\)~is the desired basis for~\(E\).
+
+Conversely, if \(t\)~is the transformation of~\(B_{12}(\lambda)\) relative to~\(\{a_1,a_2\}\), then
+\begin{align*}
+t(x)&=t(\xi_1a_1+\xi_2a_2)\\
+	&=\xi_1 t(a_1)+\xi_2 t(a_2)\\
+	&=\xi_1 a_1+\xi_2(\lambda a_1+a_2)\\
+	&=\xi_1 a_1+\xi_2 a_2+\lambda\xi_2 a_1\\
+	&=x+g(x)a_1
+\end{align*}
+where \(g=\lambda\dual{a_2}\in\dual{E}\). Therefore \(t\)~is a transvection in the line~\(D_{0a_1}\). A similar argument applies to~\(B_{21}(\lambda)\).
+\end{proof}
+
+\begin{exer}[3]
+If \(u\in\End(E)\) and \(\rank(u)=1\), there is a basis of~\(E\) relative to which
+\[M(u)=\begin{pmatrix}
+\delta&0\\
+0&0
+\end{pmatrix}
+\quad(\delta\ne 0)
+\qquad\text{or}\qquad
+M(u)=\begin{pmatrix}
+0&1\\
+0&0
+\end{pmatrix}\]
+The second case occurs if and only if \(u\)~is nilpotent, in which case \(u^2=0\).
+\end{exer}
+\begin{proof}
+Let \(N=\kerz{u}\) and \(R=u(E)\). Then \(N\) and~\(R\) are vector lines in~\(E\) (4.1.7). If \(N\sect R=\{0\}\), then \(E=N+R\) is a direct sum. Choose \(a_1\in R\) and \(a_2\in N\) with \(a_1,a_2\ne 0\). Then \(u(a_1)=\delta a_1\) with \(\delta\ne 0\) since \(u(a_1)\in R\) and \(a_1\not\in N\), and also \(u(a_2)=0\). It follows that \(\{a_1,a_2\}\)~is a basis of~\(E\) relative to which
+\[M(u)=\begin{pmatrix}
+\delta&0\\
+0&0
+\end{pmatrix}\]
+If \(N\sect R\ne\{0\}\), then \(N=R\) (3.3.1). Choose \(a_1\in N\), \(a_1\ne 0\) and \(a_2\)~with \(u(a_2)=a_1\). Then \(\{a_1,a_2\}\)~is a basis of~\(E\) (since \(a_2\not\in N\)) relative to which
+\[M(u)=\begin{pmatrix}
+0&1\\
+0&0
+\end{pmatrix}\]
+If \(M(u)\)~has this form, then \(M(u^2)=M(u)^2=0\), so \(u^2=0\) and \(u\)~is nilpotent. Conversely if \(u\)~is nilpotent, there is \(k>1\) least such that \(u^k=0\). Then \(u^{k-1}(E)\ne 0\) but \(u^{k-1}(E)\subseteq N\), so \(u^{k-1}(E)=N\). If \(k>2\), then \(u^{k-1}(E)\)~is a proper subspace of~\(u^{k-2}(E)\), lest \(u^{k-2}(E)=N\) and \(u^{k-1}=0\). But then \(u^{k-2}(E)=E\), impossible since \(\rank(u)=1\). It follows that \(u^2=0\), so \(N=R\) and \(M(u)\)~has this form.
 \end{proof}
 
 % References
