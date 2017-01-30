@@ -10,6 +10,7 @@
 
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
+\newcommand{\mult}{\cdot}
 
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
@@ -253,6 +254,36 @@ If \(N\sect R\ne\{0\}\), then \(N=R\) (3.3.1). Choose \(a_1\in N\), \(a_1\ne 0\)
 0&0
 \end{pmatrix}\]
 If \(M(u)\)~has this form, then \(M(u^2)=M(u)^2=0\), so \(u^2=0\) and \(u\)~is nilpotent. Conversely if \(u\)~is nilpotent, there is \(k>1\) least such that \(u^k=0\). Then \(u^{k-1}(E)\ne 0\) but \(u^{k-1}(E)\subseteq N\), so \(u^{k-1}(E)=N\). If \(k>2\), then \(u^{k-1}(E)\)~is a proper subspace of~\(u^{k-2}(E)\), lest \(u^{k-2}(E)=N\) and \(u^{k-1}=0\). But then \(u^{k-2}(E)=E\), impossible since \(\rank(u)=1\). It follows that \(u^2=0\), so \(N=R\) and \(M(u)\)~has this form.
+\end{proof}
+
+\begin{exer}[8]
+We have
+\[\begin{pmatrix}
+\alpha_1\\
+\alpha_2
+\end{pmatrix}
+\begin{pmatrix}
+\beta_1&\beta_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha_1\beta_1&\alpha_1\beta_2\\
+\alpha_2\beta_1&\alpha_2\beta_2
+\end{pmatrix}\]
+This can be interpreted as the composite of a linear form \(E\to\R\) and a linear map \(\R\to E\); it maps the plane onto the origin or onto a vector line and hence is of rank \(0\) or~\(1\).
+\end{exer}
+
+\begin{exer}[9]
+If \(f:E\to E\) is a function which commutes with all automorphisms in~\(\GL(E)\), then \(f=h_{\lambda}\) for some \(\lambda\in\R\).
+\end{exer}
+\begin{proof}
+First, since \(f\)~commutes with \(h_2\in\GL(E)\),
+\[f(0)=f(2\mult 0)=2\mult f(0)=f(0)+f(0)\]
+and it follows that \(f(0)=0\). Now \(f(\alpha x)=\alpha f(x)\) for all \(x\in E\) and \(\alpha\in\R\), using the previous result for \(\alpha=0\) and commutativity of~\(f\) with \(h_{\alpha}\in\GL(E)\) for \(\alpha\ne0\).
+
+Fix \(x\ne 0\) and let \(u\ne 1\) be a transvection in the line \(D=D_{0x}\). Then \(u(f(x))=f(u(x))=f(x)\), so \(f(x)\in D\) and hence \(f(x)=\lambda x\) for some \(\lambda\in\R\). It follows that \(f(y)=\lambda y\) for all \(y\in D\). Fix \(y\not\in D\). We may assume \(u(y)=x+y\). By reasoning as above, \(f(y)=\lambda_y y\) and \(f(x+y)=\lambda_{x+y}(x+y)\) for some \(\lambda_y,\lambda_{x+y}\in\R\). But also
+\[f(x+y)=f(u(y))=u(f(y))=u(\lambda_y y)=\lambda_y u(y)=\lambda_y(x+y)\]
+so \(\lambda_y=\lambda_{x+y}\) (since \(x+y\ne 0\)). Now considering the transvection~\(u'\) in the line \(D'=D_{0y}\) with \(u'(x)=x+y\), it follows that \(\lambda=\lambda_{x+y}=\lambda_y\). Therefore \(f(y)=\lambda y\) for all \(y\in E\), so \(f=h_{\lambda}\).
 \end{proof}
 
 % References
