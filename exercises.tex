@@ -261,11 +261,17 @@ If \(M(u)\)~has this form, then \(M(u^2)=M(u)^2=0\), so \(u^2=0\) and \(u\)~is n
 Let \(u:E\to E\) be an injective function such that \(E\)~is the smallest variety containing~\(u(E)\), and \(u(a),u(b),u(c)\) are collinear whenever \(a,b,c\in E\) are collinear.
 \begin{itemize}[itemsep=0pt]
 \item If \(a,b,c\in E\) are not collinear, then \(u(a),u(b),u(c)\) are not collinear.
+\item For every line~\(D\), there is a unique line~\(D'\) such that \(u(D)\subseteq D'\). If \(u\)~is bijective, then \(u(D)=D'\); moreover, if \(D_1,D_2\) are parallel (resp. distinct, not parallel), then so are \(u(D_1),u(D_2)\).
+\item If \(u\)~is bijective, there is \(v\in\GA(E)\) such that \(u_1=v\after u\) fixes the origin and basis vectors \(a_1,a_2\in E\).
 \end{itemize}
 \end{exer}
 \begin{proof}\
 \begin{itemize}[itemsep=0pt]
 \item Suppose towards a contradiction that \(u(a),u(b),u(c)\) are on the line~\(\Delta\). Let \(x\in E\). If \(x\in D_{ab}\union D_{ac}\union D_{bc}\), then \(u(x)\in\Delta\). Otherwise if, say, \(x\) and~\(c\) are on opposite sides of~\(D_{ab}\), then \(D_{xc}\) and~\(D_{ab}\) intersect at a unique point~\(y\) by (3.3.9) and~(4.1.6), \(u(y)\in\Delta\) since \(y\in D_{ab}\), and \(u(x)\in\Delta\) since \(x\in D_{yc}\). Similarly \(u(x)\in\Delta\) if \(x\) and~\(b\) are on opposite sides of~\(D_{ac}\), or \(x\) and~\(a\) are on opposite sides of~\(D_{bc}\). Finally, if none of these cases hold, then \(D_{xc}\)~cannot be parallel to~\(D_{ab}\), because if \(x\)~is in the direction of~\(a-b\) from~\(c\) (that is, if \(x=c+\xi(a-b)\) for \(\xi>0\)) then \(x\) and~\(b\) are on opposite sides of~\(D_{ac}\), and if \(x\)~is in the direction of~\(b-a\) from~\(c\) then \(x\) and~\(a\) are on opposite sides of~\(D_{bc}\). Therefore \(D_{xc}\) and~\(D_{ab}\) intersect at a unique point~\(y\) by~(4.1.6) and \(u(x)\in\Delta\) as above. Since \(x\)~was arbitrary, this means \(u(E)\subseteq\Delta\), contradicting the hypothesis about~\(u(E)\).
+
+\item By hypothesis, \(u(D_{ab})\subseteq D_{u(a)u(b)}\). If \(u\)~is bijective and \(x\in D_{u(a)u(b)}\), then \(x=u(c)\) for some \(c\in D_{ab}\) by the previous item, so \(D_{u(a)u(b)}\subseteq u(D_{ab})\). If \(D_1,D_2\) are distinct and parallel, then \(D_1\sect D_2=\emptyset\), so \(u(D_1)\sect u(D_2)=\emptyset\) by injectivity of~\(u\), so \(u(D_1),u(D_2)\) are distinct and parallel. If \(D_1,D_2\) are not parallel, they intersect at a unique point~\(a\). If \(b\in D_1\) and \(c\in D_2\) with \(b,c\ne a\), then \(a,b,c\) are not collinear, so \(u(a),u(b),u(c)\) are not collinear by the previous item and \(u(D_1),u(D_2)\) are not parallel.
+
+\item Let \(a_1,a_2\) be basis vectors of~\(E\). Then \(0,a_1,a_2\) are not collinear (4.1.1), so \(u(0),u(a_1),u(a_2)\) are not collinear by a previous item, so \(a_1'=u(a_1)-u(0)\) and \(a_2'=u(a_2)-u(0)\) are basis vectors of~\(E\). Let \(w\in\GL(E)\) map \(a_1'\mapsto a_1\) and \(a_2'\mapsto a_2\) (4.1.10) and let \(v=w\after t_{-u(0)}\in\GA(E)\) (3.2.19). Then \(u_1=v\after u\) is as desired.
 \end{itemize}
 \end{proof}
 
