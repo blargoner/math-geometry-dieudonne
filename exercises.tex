@@ -316,6 +316,71 @@ In~(4.2.5), if \(a\in E\), \(a\ne 0\) and \(f(x)=0\) is an equation of~\(D_{0a}\
 Since \(\Psi\)~is essentially the determinant (4.2.9) and the determinant measures (signed) area, this just says that \(x\)~is on the vector line determined by~\(a\) if and only if the parallelogram determined by \(x\) and~\(a\) has zero area.
 \end{rmk}
 
+\begin{exer}[3]
+Relative to a fixed basis of~\(E\), let \(u\) and~\(v\) be defined by
+\[M(u)=\begin{pmatrix}
+1&0\\
+0&0
+\end{pmatrix}
+\qquad
+M(v)=\begin{pmatrix}
+0&1\\
+0&0
+\end{pmatrix}\]
+Then \(uv=v\), so \(\rank(uv)=1\), and \(vu=0\), so \(\rank(vu)=0\), but \(\lambda=0\) is the only eigenvalue of \(uv\) and~\(vu\), so \(\lambda^2=0\)~is the characteristic equation of \(uv\) and~\(vu\).
+\end{exer}
+
+\begin{exer}[5]
+If \(u\in\End(E)\) has eigenvalues, there is a basis of~\(E\) relative to which
+\[M(u)=\begin{pmatrix}
+\lambda&0\\
+0&\mu
+\end{pmatrix}
+\qquad\text{or}\qquad
+M(u)=\begin{pmatrix}
+\lambda&1\\
+0&\lambda
+\end{pmatrix}\]
+If, relative to some basis of~\(E\),
+\[M(u)=\begin{pmatrix}
+\lambda&\alpha\\
+0&\lambda
+\end{pmatrix}\]
+with \(\alpha\ne 0\), then
+\[M(u)=\begin{pmatrix}
+\lambda&1\\
+0&\lambda
+\end{pmatrix}\]
+relative to some basis of~\(E\), but there is no basis of~\(E\) relative to which
+\[M(u)=\begin{pmatrix}
+\lambda&0\\
+0&\lambda
+\end{pmatrix}\]
+\end{exer}
+\begin{proof}
+If \(u\)~has two distinct eigenvalues~\(\lambda,\mu\) with eigenvectors~\(a,b\) respectively, then \(\{a,b\}\)~is a basis of~\(E\) and
+\[M(u,\{a,b\})=\begin{pmatrix}
+\lambda&0\\
+0&\mu
+\end{pmatrix}\]
+Otherwise, \(u\)~has just one eigenvalue~\(\lambda\). If there are two linearly independent eigenvectors~\(a,b\), then
+\[M(u,\{a,b\})=\begin{pmatrix}
+\lambda&0\\
+0&\lambda
+\end{pmatrix}\]
+Note \(M(u)\)~has this form only if \(u=h_{\lambda}\). If there are not two linearly independent eigenvectors, let \(a\)~be an eigenvector and \(\{a,x\}\)~a basis of~\(E\). Then \(u(x)=\alpha a+\lambda x\) with \(\alpha\ne 0\) by assumption and~(4.2.14), so
+\[M(u,\{a,x\})=\begin{pmatrix}
+\lambda&\alpha\\
+0&\lambda
+\end{pmatrix}\]
+If \(b=\alpha^{-1}x\), then \(\{a,b\}\)~is a basis of~\(E\) and
+\[M(u,\{a,b\})=\begin{pmatrix}
+\lambda&1\\
+0&\lambda
+\end{pmatrix}\]
+Note \(M(u)\)~has this form only if \(u\ne h_{\lambda}\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Linear Algebra and Geometry.} Hermann, 1969.
