@@ -262,8 +262,9 @@ Let \(u:E\to E\) be an injective function such that \(E\)~is the smallest variet
 \begin{itemize}[itemsep=0pt]
 \item If \(a,b,c\in E\) are not collinear, then \(u(a),u(b),u(c)\) are not collinear.
 \item For every line~\(D\), there is a unique line~\(D'\) such that \(u(D)\subseteq D'\). If \(u\)~is bijective, then \(u(D)=D'\); moreover, if \(D_1,D_2\) are parallel (resp. distinct, not parallel), then so are \(u(D_1),u(D_2)\).
-\item If \(u\)~is bijective, there is \(v\in\GA(E)\) such that \(u_1=v\after u\) fixes the origin and basis vectors \(a_1,a_2\in E\).
+\item If \(u\)~is bijective, there is \(v\in\GA(E)\) such that \(u_1=v\after u\) fixes the origin and basis vectors \(a_1,a_2\in E\). \(u_1\)~maps lines to lines and preserves parallelism (resp. distinctness, non-parallelism); in particular, \(u_1\)~preserves the lines \(D_{0a_1},D_{0a_2},D_{a_1a_2}\) and hence the directions of any lines parallel to these.
 \item Given the points \(\xi a_1,\eta a_1\), it is possible to construct \((\xi+\eta)a_1\) and~\(\xi\eta a_1\) by intersecting lines with direction vectors derived from~\(a_1,a_2\).
+\item If \(\varphi\)~is defined by \(u_1(\xi a_1)=\varphi(\xi) a_1\), then \(\varphi\)~is a field automorphism of~\(\R\), so \(\varphi=1_{\R}\).\footnote{For this problem, we assume there are no nontrivial field automorphisms of~\(\R\).} It follows that \(u_1=1_E\), so \(u=\inv{v}\) is an affine map.
 \end{itemize}
 \end{exer}
 \begin{proof}\
@@ -272,10 +273,24 @@ Let \(u:E\to E\) be an injective function such that \(E\)~is the smallest variet
 
 \item By hypothesis, \(u(D_{ab})\subseteq D_{u(a)u(b)}\). If \(u\)~is bijective and \(x\in D_{u(a)u(b)}\), then \(x=u(c)\) for some \(c\in D_{ab}\) by the previous item, so \(D_{u(a)u(b)}\subseteq u(D_{ab})\). If \(D_1,D_2\) are distinct and parallel, then \(D_1\sect D_2=\emptyset\), so \(u(D_1)\sect u(D_2)=\emptyset\) by injectivity of~\(u\), so \(u(D_1),u(D_2)\) are distinct and parallel. If \(D_1,D_2\) are not parallel, they intersect at a unique point~\(a\). If \(b\in D_1\) and \(c\in D_2\) with \(b,c\ne a\), then \(a,b,c\) are not collinear, so \(u(a),u(b),u(c)\) are not collinear by the previous item and \(u(D_1),u(D_2)\) are not parallel.
 
-\item Let \(a_1,a_2\) be basis vectors of~\(E\). Then \(0,a_1,a_2\) are not collinear (4.1.1), so \(u(0),u(a_1),u(a_2)\) are not collinear by a previous item, so \(a_1'=u(a_1)-u(0)\) and \(a_2'=u(a_2)-u(0)\) are basis vectors of~\(E\). Let \(w\in\GL(E)\) map \(a_1'\mapsto a_1\) and \(a_2'\mapsto a_2\) (4.1.10) and let \(v=w\after t_{-u(0)}\in\GA(E)\) (3.2.19). Then \(u_1=v\after u\) is as desired.
+\item Let \(a_1,a_2\) be basis vectors of~\(E\). Then \(0,a_1,a_2\) are not collinear (4.1.1), so \(u(0),u(a_1),u(a_2)\) are not collinear by a previous item, so \(a_1'=u(a_1)-u(0)\) and \(a_2'=u(a_2)-u(0)\) are basis vectors of~\(E\). Let \(w\in\GL(E)\) map \(a_1'\mapsto a_1\) and \(a_2'\mapsto a_2\) (4.1.10) and let \(v=w\after t_{-u(0)}\in\GA(E)\) (3.2.19). Then \(u_1=v\after u\) fixes \(0,a_1,a_2\). \(u_1\)~operates as claimed on lines by (3.2.17) and the previous item, and the observation that, for example,
+\[u_1(D_{a_1a_2})=D_{u_1(a_1)u_1(a_2)}=D_{a_1a_2}\]
 
 \item If \(L_1\)~is the line through~\(\eta a_1\) with direction vector~\(a_2-a_1\), then \(L_1\sect D_{0a_2}=\{\eta a_2\}\), so \(\eta a_2\)~is constructible. If \(L_2\)~is the line through~\(\xi a_1\) with direction vector~\(a_2\), and \(L_3\)~is the line through~\(\eta a_2\) with direction vector~\(a_1\), then \(L_2\sect L_3=\{\xi a_1+\eta a_2\}\), so \(\xi a_1+\eta a_2\) is constructible. If \(L_4\)~is the line through \(\xi a_1+\eta a_2\) with direction vector~\(a_2-a_1\), then \(L_4\sect D_{0a_1}=\{(\xi+\eta)a_1\}\), so \((\xi+\eta)a_1\)~is constructible. If \(L_5\)~is the line through~\(\eta a_2\) with direction vector \(a_2-\xi a_1\), then \(L_5\sect D_{0a_1}=\{\xi\eta a_1\}\), so \(\xi\eta a_1\)~is constructible.
 
+\item By previous items, \(u_1(L_2)\)~is the line passing through~\(u_1(\xi a_1)\) parallel to~\(L_2\) (and to~\(D_{0a_2}\)), and \(u_1(L_3)\)~is the line passing through~\(u_1(\eta a_2)\) parallel to~\(L_3\) (and to~\(D_{0a_1}\)). Since \(u_1(\eta a_2)\in D_{0a_2}\) and \(u_1(\xi a_1)\in D_{0a_1}\), it follows that \(u_1(\xi a_1)+u_1(\eta a_2)\) is the intersection of \(u_1(L_2)\) and~\(u_1(L_3)\). But we also have \(u_1(\xi a_1+\eta a_2)\in u_1(L_2\sect L_3)=u_1(L_2)\sect u_1(L_3)\), so
+\[u_1(\xi a_1+\eta a_2)=u_1(\xi a_1)+u_1(\eta a_2)\]
+Now \(u_1(L_4)\)~is the line passing through this point and~\(u_1((\xi+\eta)a_1)\) parallel to the line~\(u_1(L_1)\), which in turn passes through \(u_1(\eta a_1)\) and~\(u_1(\eta a_2)\) parallel to~\(L_1\) (and to~\(D_{a_1a_2}\)). Therefore
+\[u_1((\xi+\eta)a_1)=u_1(\xi a_1)+u_1(\eta a_1)\]
+is the intersection of~\(u_1(L_4)\) and~\(D_{0a_1}\). It follows that \(\varphi(\xi+\eta)=\varphi(\xi)+\varphi(\eta)\).
+
+We claim \(u_1(\eta a_2)=\varphi(\eta)a_2\). Indeed, \(u_1(\eta a_2)=\lambda a_2\) for some~\(\lambda\), and also \(u_1(\eta a_2)=u_1(\eta a_1)+\mu(a_2-a_1)=\varphi(\eta)a_1+\mu(a_2-a_1)\) for some~\(\mu\) by facts about~\(u_1(L_1)\) above. It follows that \(\lambda=\mu=\varphi(\eta)\) by linear independence of~\(a_1,a_2\), establishing the claim.
+
+Now \(u_1(L_5)\)~is the line passing through~\(u_1(\xi\eta a_1)\) and~\(u_1(\eta a_2)\), and with the direction vector \(u_1(\xi a_1)-a_2\). Therefore
+\[u_1(\xi\eta a_1)=u_1(\eta a_2)+\varphi(\eta)[u_1(\xi a_1)-a_2]=\varphi(\eta)u_1(\xi a_1)\]
+is the intersection of~\(u_1(L_5)\) and~\(D_{0a_1}\). It follows that \(\varphi(\xi\eta)=\varphi(\xi)\varphi(\eta)\). Since \(\varphi(1)=1\), \(\varphi\)~is a field automorphism of~\(\R\) and hence \(\varphi=1_{\R}\).
+
+By the above, \(u_1\)~fixes \(D_{0a_1}\) and~\(D_{0a_2}\) pointwise. If \(x=\xi_1 a_1+\xi_2 a_2\), then \(x\)~is the intersection of the line through~\(\xi_1 a_1\) parallel to~\(D_{0a_2}\) and the line through~\(\xi_2 a_2\) parallel to~\(D_{0a_1}\). It follows that \(u_1(x)\)~is the intersection of the same lines, so \(u_1(x)=x\). Therefore \(u_1=1_E\), and \(u=\inv{v}\) is affine.\qedhere
 \end{itemize}
 \end{proof}
 
