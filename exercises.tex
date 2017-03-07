@@ -21,6 +21,7 @@
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\kerz}[1]{\inv{#1}(0)}
 \newcommand{\dual}[1]{#1^*}
+\newcommand{\norm}[1]{\lVert{#1}\rVert}
 
 % Theorems
 \theoremstyle{definition}
@@ -408,6 +409,15 @@ Note \(M(u)\)~has this form only if \(u\ne h_{\lambda}\).
 
 \section*{Chapter~V}
 \subsection*{Section~1}
+\begin{rmk}
+For all \(x,y\in E\),
+\[\norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)\]
+\end{rmk}
+\begin{proof}
+Bilinearity.
+\end{proof}
+\noindent This is called the \emph{parallelogram law} because it shows that the sum of the squares of the lengths of the diagonals of a parallelogram is equal to the sum of the squares of the lengths of the sides.
+
 \begin{rmk}
 In~(5.1.8), \(H(x)=x+H_0\) and \(D(x)=x+D_0\). To see that the unique point \(y\in D\sect H(x)\) (3.3.8) satisfies the properties for~\(x\), let \(c\in D\sect H\) and observe that \(y-c\) is the orthogonal projection of \(x-c\) on~\(D_0\). Indeed, \(y-c\in D_0\) since \(y,c\in D\) and \((x-c)-(y-c)=x-y\in H_0\) since \(y\in H(x)\). It follows (5.1.7) that \(x-y\)~is orthogonal to \(y'-y\in D_0\) for all \(y'\in D\) and
 \[d(x,y)=d(x-c,y-c)\le d(x-c,d)=d(x,d+c)\]
