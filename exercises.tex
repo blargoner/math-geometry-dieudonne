@@ -411,10 +411,10 @@ Note \(M(u)\)~has this form only if \(u\ne h_{\lambda}\).
 \subsection*{Section~1}
 \begin{rmk}
 For all \(x,y\in E\),
-\[\norm{x+y}^2+\norm{x-y}^2=2(\norm{x}^2+\norm{y}^2)\]
+\[\norm{x+y}^2+\norm{x-y}^2=2\left(\norm{x}^2+\norm{y}^2\right)\]
 \end{rmk}
 \begin{proof}
-Bilinearity.
+Bilinearity of the inner product.
 \end{proof}
 \noindent This is called the \emph{parallelogram law} because it shows that the sum of the squares of the lengths of the diagonals of a parallelogram is equal to the sum of the squares of the lengths of the sides.
 
@@ -422,6 +422,20 @@ Bilinearity.
 In~(5.1.8), \(H(x)=x+H_0\) and \(D(x)=x+D_0\). To see that the unique point \(y\in D\sect H(x)\) (3.3.8) satisfies the properties for~\(x\), let \(c\in D\sect H\) and observe that \(y-c\) is the orthogonal projection of \(x-c\) on~\(D_0\). Indeed, \(y-c\in D_0\) since \(y,c\in D\) and \((x-c)-(y-c)=x-y\in H_0\) since \(y\in H(x)\). It follows (5.1.7) that \(x-y\)~is orthogonal to \(y'-y\in D_0\) for all \(y'\in D\) and
 \[d(x,y)=d(x-c,y-c)\le d(x-c,d)=d(x,d+c)\]
 for all \(d\in D_0\), so \(d(x,y)\le d(x,y')\) for all \(y'\in D\) (since \(c+D_0=D\)). Moreover, \(y\)~is unique in satisfying these properties for~\(x\) since \(y-c\)~is unique in satisfying them for~\(x-c\) (5.1.7). A similar argument applies for the point \(z\in H\sect D(x)\).
+\end{rmk}
+
+\begin{rmk}
+In~(5.1.15), we initially suspect that \(u\)~is a translation after a symmetry (5.1.13), and hence a symmetry itself. Since \(u(u(0))=u^2(0)=0\), we suspect that \(u\)~is a symmetry about a variety through \(a=\tfrac{1}{2}u(0)\) perpendicular to~\(a\), which turns out to be the case.
+
+By~(5.1.13),
+\[\tfrac{1}{2}(x+u(x))=a+\tfrac{1}{2}(x+v(x))\in a+V\]
+and
+\[\tfrac{1}{2}(x+u(x))-x=a-\tfrac{1}{2}(x-v(x))\in a+W=W\]
+since \(-v\)~is the symmetry about~\(W\) and \(a\in W\). Therefore \(\tfrac{1}{2}(x+u(x))\) is the unique point in the intersection of \(a+V\) and \(x+W\) (3.3.8).
+\end{rmk}
+
+\begin{rmk}
+In~(5.1.16), \(t_{2b}=(t_bu_1)(u_1t_b)\) is the composite of two symmetries about varieties parallel to~\(V\) differing by~\(b\). Therefore \emph{translations are just composites of symmetries.}
 \end{rmk}
 
 \begin{exer}[1]
