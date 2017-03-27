@@ -22,6 +22,7 @@
 \newcommand{\kerz}[1]{\inv{#1}(0)}
 \newcommand{\dual}[1]{#1^*}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
+\newcommand{\innerprod}[2]{({#1}\;|\;{#2})}
 
 % Theorems
 \theoremstyle{definition}
@@ -443,6 +444,35 @@ If \(D\)~is a vector line in~\(E\) and \(H\)~is the orthogonal hyperplane, then 
 \end{exer}
 \begin{proof}
 If \(H'\)~is a vector hyperplane orthogonal to a vector line \(D'\subseteq H\), then \(D\)~is orthogonal to~\(D'\) (since \(D\)~is orthogonal to~\(H\)), so \(D\subseteq H'\) (since \(H'\)~is the orthogonal subspace of~\(D'\)). Conversely, if \(x\)~is in the intersection and \(h\in H\), \(h\ne 0\), then \(x\)~is orthogonal to~\(h\) since \(x\)~is in the vector hyperplane orthogonal to the vector line~\(D_{0h}\). The dual follows by taking orthogonal subspaces.
+\end{proof}
+
+\begin{exer}[2]
+If \(a\) and~\(a'\) are diametrically opposed points on a sphere~\(S\), then a necessary and sufficient condition for a point~\(x\) to be on~\(S\) is that \(x-a\) and \(x-a'\) be orthogonal.
+\end{exer}
+\begin{proof}
+Without loss of generality, we may assume that \(S\)~is centered at the origin with radius~\(\rho\). Then \(a'=-a\), so
+\[\innerprod{x-a}{x-a'}=\norm{x}^2-\rho^2=0\iff\norm{x}=\rho\iff x\in S\qedhere\]
+\end{proof}
+
+\begin{exer}[4]
+Let \(S\)~be a sphere centered at~\(c\) with radius~\(\rho\). If \(a\in E\) with \(\delta=d(a,c)\) and \(D\)~is a line through~\(a\) meeting~\(S\) at distinct points \(x_1,x_2\), then
+\[\innerprod{x_1-a}{x_2-a}=\delta^2-\rho^2\]
+If instead \(D\)~meets \(S\) at the single point~\(x\), then
+\[d(a,x)^2=\delta^2-\rho^2\]
+\end{exer}
+\begin{proof}
+Without loss of generality, we may assume that \(c=0\). In the first case, let \(b=\tfrac{1}{2}(x_1+x_2)\) and \(y=\tfrac{1}{2}(x_1-x_2)\). Then
+\[\innerprod{b}{y}=\tfrac{1}{4}(\norm{x_1}^2-\norm{x_2}^2)=\tfrac{1}{4}(\rho^2-\rho^2)=0\]
+Since \(y\)~is a direction vector of~\(D\), it follows that \(b\)~is perpendicular to~\(D\). Now \(x_1=b+y\) and \(x_2=b-y\), so \(x_1-a=(b-a)+y\) and \(x_2-a=(b-a)-y\), hence
+\begin{align*}
+\innerprod{x_1-a}{x_2-a}&=\innerprod{(b-a)+y}{(b-a)-y}&&\\
+	&=\innerprod{b-a}{b-a}-\norm{y}^2&&\\
+	&=\delta^2-(\norm{b}^2+\norm{y}^2)&&\text{since }\innerprod{b}{b-a}=0\text{, }\innerprod{b}{a}=\norm{b}^2\\
+	&=\delta^2-\rho^2&&\text{by Pythagoras (5.1.5)}
+\end{align*}
+In the second case, \(D\)~must be perpendicular to~\(x\). Indeed, if not, let \(d\)~be a direction vector of~\(D\) with \(\innerprod{d}{x}\ne 0\) and consider
+\[z=x-\frac{2\innerprod{d}{x}}{\norm{d}^2}d\]
+Then \(z\in D\), \(z\ne x\), and expansion of \(\innerprod{z}{z}\) shows that \(\norm{z}^2=\norm{x}^2\), so \(\norm{z}=\rho\) and \(z\in S\), contradicting that \(D\)~is tangential to~\(S\) at~\(x\). It follows that \(\innerprod{x}{a-x}=0\), and \(d(a,x)^2=\delta^2-\rho^2\) by Pythagoras (5.1.5).
 \end{proof}
 
 % References
