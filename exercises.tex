@@ -468,24 +468,47 @@ Without loss of generality, we may assume that \(S\)~is centered at the origin w
 \end{proof}
 
 \begin{exer}[4]
-Let \(S\)~be a sphere centered at~\(c\) with radius~\(\rho\). If \(a\in E\) with \(\delta=d(a,c)\) and \(D\)~is a line through~\(a\) meeting~\(S\) at distinct points \(x_1,x_2\), then
+\emph{Powers and coorthogonal spheres:}
+\begin{itemize}
+\item Let \(S\)~be a sphere centered at~\(c\) with radius~\(\rho\). If \(a\in E\) with \(\delta=d(a,c)\) and \(D\)~is a line through~\(a\) meeting~\(S\) at distinct points \(x_1,x_2\), then
 \[\innerprod{x_1-a}{x_2-a}=\delta^2-\rho^2\]
 If instead \(D\)~meets \(S\) at the single point~\(x\), then
 \[d(a,x)^2=\delta^2-\rho^2\]
+\item If \(S_1,S_2\) are non-concentric spheres with respective centers \(c_1,c_2\) and radii \(\rho_1,\rho_2\), then the set~\(H\) of points whose powers with respect to \(S_1\) and~\(S_2\) are equal is a hyperplane perpendicular to~\(D_{c_1c_2}\) and containing \(S_1\sect S_2\).
+\end{itemize}
 \end{exer}
-\begin{proof}
-Without loss of generality, we may assume that \(c=0\). In the first case, let \(b=\tfrac{1}{2}(x_1+x_2)\) and \(y=\tfrac{1}{2}(x_1-x_2)\). Then
+\begin{proof}\
+\begin{itemize}
+\item Without loss of generality, we may assume that \(c=0\). In the first case, let \(b=\tfrac{1}{2}(x_1+x_2)\) and \(y=\tfrac{1}{2}(x_1-x_2)\). Then
 \[\innerprod{b}{y}=\tfrac{1}{4}(\norm{x_1}^2-\norm{x_2}^2)=\tfrac{1}{4}(\rho^2-\rho^2)=0\]
 Since \(y\)~is a direction vector of~\(D\), it follows that \(b\)~is perpendicular to~\(D\). Now \(x_1=b+y\) and \(x_2=b-y\), so \(x_1-a=(b-a)+y\) and \(x_2-a=(b-a)-y\), hence
 \begin{align*}
 \innerprod{x_1-a}{x_2-a}&=\innerprod{(b-a)+y}{(b-a)-y}&&\\
 	&=\innerprod{b-a}{b-a}-\norm{y}^2&&\\
-	&=\delta^2-(\norm{b}^2+\norm{y}^2)&&\text{since }\innerprod{b}{b-a}=0\text{, }\innerprod{b}{a}=\norm{b}^2\\
+	&=\delta^2-(\norm{b}^2+\norm{y}^2)&&\text{as }\innerprod{b}{b-a}=0\text{, }\innerprod{b}{a}=\norm{b}^2\\
 	&=\delta^2-\rho^2&&\text{by Pythagoras (5.1.5)}
 \end{align*}
 In the second case, \(D\)~must be perpendicular to~\(x\). Indeed, if not, let \(d\)~be a direction vector of~\(D\) with \(\innerprod{d}{x}\ne 0\) and consider
 \[z=x-\frac{2\innerprod{d}{x}}{\norm{d}^2}d\]
 Then \(z\in D\), \(z\ne x\), and expansion of \(\innerprod{z}{z}\) shows that \(\norm{z}^2=\norm{x}^2\), so \(\norm{z}=\rho\) and \(z\in S\), contradicting that \(D\)~is tangential to~\(S\) at~\(x\). It follows that \(\innerprod{x}{a-x}=0\), and \(d(a,x)^2=\delta^2-\rho^2\) by Pythagoras (5.1.5).
+\item We first find \(c\in H\sect D_{c_1c_2}\). We must have \(c=\alpha c_1+\beta c_2\) with \(\alpha,\beta\ge 0\) and \(\alpha+\beta=1\). In fact, \(\alpha=\norm{c-c_2}/\delta\) and \(\beta=\norm{c-c_1}/\delta\) where \(\delta=\norm{c_1-c_2}\ne 0\), so that
+\begin{align*}
+\alpha-\beta&=(\alpha-\beta)(\alpha+\beta)\\
+	&=\alpha^2-\beta^2\\
+	&=\frac{\norm{c-c_2}^2-\norm{c-c_1}^2}{\delta^2}\\
+	&=\frac{(\norm{c-c_2}^2-\rho_2^2)+\rho_2^2-(\norm{c-c_1}^2-\rho_1^2)-\rho_1^2}{\delta^2}\\
+	&=\frac{\rho_2^2-\rho_1^2}{\delta^2}
+\end{align*}
+since \(c\in H\). It follows that
+\[\alpha=\frac{1}{2}+\frac{\rho_2^2-\rho_1^2}{2\delta^2}\qquad\beta=\frac{1}{2}-\frac{\rho_2^2-\rho_1^2}{2\delta^2}\qquad c=\frac{1}{2}(c_1+c_2)+\frac{\rho_2^2-\rho_1^2}{2\delta^2}(c_1-c_2)\]
+Note \(c\)~is the midpoint of \(c_1\) and~\(c_2\) if and only if \(\rho_1=\rho_2\). Now
+\begin{align*}
+x\in H&\iff\norm{x-c_1}^2-\rho_1^2=\norm{x-c_2}^2-\rho_2^2\\
+	&\iff\innerprod{x-c_2}{x-c_2}-\innerprod{x-c_1}{x-c_1}=\rho_2^2-\rho_1^2\\
+	&\iff\innerprod{x}{c_1-c_2}=\tfrac{1}{2}(\norm{c_1}^2-\norm{c_2}^2+\rho_2^2-\rho_1^2)=\innerprod{c}{c_1-c_2}
+\end{align*}
+Therefore \(H\)~is the hyperplane through~\(c\) perpendicular to~\(D_{c_1c_2}\). Finally, \(S_1\sect S_2\subseteq H\) since \(S_1\sect S_2\) consists of the points whose powers with respect to \(S_1\) and~\(S_2\) are zero.
+\end{itemize}
 \end{proof}
 
 % References
