@@ -424,6 +424,15 @@ Bilinearity of the inner product.
 \noindent This is called the \emph{parallelogram law} because it shows that the sum of the squares of the lengths of the diagonals of a parallelogram is equal to the sum of the squares of the lengths of the sides.
 
 \begin{rmk}
+If \(a,b\in E\) with \(a\ne b\) and \(x=\alpha a+\beta b\) with \(\alpha,\beta\ge 0\) and \(\alpha+\beta=1\) is a point on the segment~\(ab\) (see remark from~(3.3) above), then
+\[\alpha=\frac{\norm{x-b}}{\norm{a-b}}\qquad\beta=\frac{\norm{x-a}}{\norm{a-b}}\]
+In other words, \(\alpha\)~is the ratio of the lengths of the segments \(xb\) and~\(ab\), and \(\beta\)~that of \(xa\) and~\(ab\).
+\end{rmk}
+\begin{proof}
+For example, \(x-b=\alpha a+(\beta-1)b=\alpha(a-b)\), so \(\norm{x-b}=\alpha\norm{a-b}\).
+\end{proof}
+
+\begin{rmk}
 In~(5.1.8), \(H(x)=x+H_0\) and \(D(x)=x+D_0\). To see that the unique point \(y\in D\sect H(x)\) (3.3.8) satisfies the properties for~\(x\), let \(c\in D\sect H\) and observe that \(y-c\) is the orthogonal projection of \(x-c\) on~\(D_0\). Indeed, \(y-c\in D_0\) since \(y,c\in D\) and \((x-c)-(y-c)=x-y\in H_0\) since \(y\in H(x)\). It follows (5.1.7) that \(x-y\)~is orthogonal to \(y'-y\in D_0\) for all \(y'\in D\) and
 \[d(x,y)=d(x-c,y-c)\le d(x-c,d)=d(x,d+c)\]
 for all \(d\in D_0\), so \(d(x,y)\le d(x,y')\) for all \(y'\in D\) (since \(c+D_0=D\)). Moreover, \(y\)~is unique in satisfying these properties for~\(x\) since \(y-c\)~is unique in satisfying them for~\(x-c\) (5.1.7). A similar argument applies for the point \(z\in H\sect D(x)\).
