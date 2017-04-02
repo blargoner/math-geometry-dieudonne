@@ -21,6 +21,7 @@
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\kerz}[1]{\inv{#1}(0)}
 \newcommand{\dual}[1]{#1^*}
+\newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 \newcommand{\innerprod}[2]{({#1}\;|\;{#2})}
 
@@ -475,6 +476,13 @@ Without loss of generality, we may assume that \(S\)~is centered at the origin w
 If instead \(D\)~meets \(S\) at the single point~\(x\), then
 \[d(a,x)^2=\delta^2-\rho^2\]
 \item If \(S_1,S_2\) are non-concentric spheres with respective centers \(c_1,c_2\) and radii \(\rho_1,\rho_2\), then the set~\(H\) of points whose powers with respect to \(S_1\) and~\(S_2\) are equal is a hyperplane perpendicular to~\(D_{c_1c_2}\) and containing \(S_1\sect S_2\).
+\item Let \(\pi_k(x)=d(x,c_k)^2-\rho_k^2\)~denote the power of~\(x\) with respect to~\(S_k\) (for \(k=1,2\)). Then the following are equivalent:
+\begin{itemize}[itemsep=0pt]
+\item[(a)] \(\pi_2(c_1)=\rho_1^2\)
+\item[(b)] \(\pi_1(c_2)=\rho_2^2\)
+\item[(c)] \(\emptyset\ne S_1\sect S_2\subseteq\{\,x\mid\innerprod{x-c_1}{x-c_2}=0\,\}\)
+\item[(d)] \(\pi_1(x)+\pi_2(x)=2\innerprod{x-c_1}{x-c_2}\)
+\end{itemize}
 \end{itemize}
 \end{exer}
 \begin{proof}\
@@ -491,6 +499,7 @@ Since \(y\)~is a direction vector of~\(D\), it follows that \(b\)~is perpendicul
 In the second case, \(D\)~must be perpendicular to~\(x\). Indeed, if not, let \(d\)~be a direction vector of~\(D\) with \(\innerprod{d}{x}\ne 0\) and consider
 \[z=x-\frac{2\innerprod{d}{x}}{\norm{d}^2}d\]
 Then \(z\in D\), \(z\ne x\), and expansion of \(\innerprod{z}{z}\) shows that \(\norm{z}^2=\norm{x}^2\), so \(\norm{z}=\rho\) and \(z\in S\), contradicting that \(D\)~is tangential to~\(S\) at~\(x\). It follows that \(\innerprod{x}{a-x}=0\), and \(d(a,x)^2=\delta^2-\rho^2\) by Pythagoras (5.1.5).
+
 \item We first find \(c\in H\sect D_{c_1c_2}\). We must have \(c=\alpha c_1+\beta c_2\) with \(\alpha,\beta\ge 0\) and \(\alpha+\beta=1\). In fact, \(\alpha=\norm{c-c_2}/\delta\) and \(\beta=\norm{c-c_1}/\delta\) where \(\delta=\norm{c_1-c_2}\ne 0\), so that
 \begin{align*}
 \alpha-\beta&=(\alpha-\beta)(\alpha+\beta)\\
@@ -508,6 +517,26 @@ x\in H&\iff\norm{x-c_1}^2-\rho_1^2=\norm{x-c_2}^2-\rho_2^2\\
 	&\iff\innerprod{x}{c_1-c_2}=\tfrac{1}{2}(\norm{c_1}^2-\norm{c_2}^2+\rho_2^2-\rho_1^2)=\innerprod{c}{c_1-c_2}
 \end{align*}
 Therefore \(H\)~is the hyperplane through~\(c\) perpendicular to~\(D_{c_1c_2}\). Finally, \(S_1\sect S_2\subseteq H\) since \(S_1\sect S_2\) consists of the points whose powers with respect to \(S_1\) and~\(S_2\) are zero.
+
+\item Let \(\delta=\norm{c_1-c_2}\). We have
+\[\pi_2(c_1)=\delta^2-\rho_2^2=\rho_1^2\iff\rho_2^2=\delta^2-\rho_1^2=\pi_1(c_2)\]
+so (a)\(\iff\)(b), and these are equivalent to \(\delta^2=\rho_1^2+\rho_2^2\). If this condition holds, then \(\rho_1-\delta\le 0\), so \(2\rho_1(\rho_1-\delta)\le 0\) and
+\begin{align*}
+2\rho_1^2-2\rho_1\delta+\rho_2^2&\le\rho_2^2\le2\rho_1^2+2\rho_1\delta+\rho_2^2\\
+\rho_1^2-2\rho_1\delta+\delta^2&\le\rho_2^2\le\rho_1^2+2\rho_1\delta+\delta^2\\
+(\rho_1-\delta)^2&\le\rho_2^2\le(\rho_1+\delta)^2\\
+\abs{\rho_1-\delta}&\le\rho_2\le\rho_1+\delta
+\end{align*}
+so \(S_1\sect S_2\ne\emptyset\) (5.1.11.4). If \(x\in S_1\sect S_2\), then
+\[\norm{x-c_1}^2+\norm{x-c_2}^2=\rho_1^2+\rho_2^2=\delta^2=\norm{c_1-c_2}^2\]
+so \(\innerprod{x-c_1}{x-c_2}=0\) (5.1.1.4). Therefore (a),(b)\(\implies\)(c). Conversely, if \(x\in S_1\sect S_2\) and \(\innerprod{x-c_1}{x-c_2}=0\), then by Pythagoras (5.1.5.1),
+\[\delta^2=\norm{c_1-c_2}^2=\norm{x-c_1}^2+\norm{x-c_2}^2=\rho_1^2+\rho_2^2\]
+so (c)\(\implies\)(a),(b). Finally, by~(5.1.1.4),
+\begin{align*}
+\pi_1(x)+\pi_2(x)&=\norm{x-c_1}^2+\norm{x-c_2}^2-(\rho_1^2+\rho_2^2)\\
+	&=2\innerprod{x-c_1}{x-c_2}+\delta^2-(\rho_1^2+\rho_2^2)
+\end{align*}
+so clearly (a),(b)\(\iff\)(d).\qedhere
 \end{itemize}
 \end{proof}
 
