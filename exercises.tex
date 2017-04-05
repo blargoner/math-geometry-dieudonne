@@ -15,7 +15,9 @@
 
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
+\DeclareMathOperator{\GO}{\mathbf{GO}}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
+\DeclareMathOperator{\Sm}{\mathbf{Sm}}
 \DeclareMathOperator{\rank}{rank}
 
 \newcommand{\inv}[1]{#1^{-1}}
@@ -539,6 +541,48 @@ so (c)\(\implies\)(a),(b). Finally, by~(5.1.1.4),
 so clearly (a),(b)\(\iff\)(d).\qedhere
 \end{itemize}
 \end{proof}
+
+\begin{exer}[6]
+\emph{Characterization of similitudes:}
+\begin{itemize}
+\item If \(u:E\to E\) is a bijective function such that \(\innerprod{u(x)}{u(y)}=\alpha\innerprod{x}{y}\) for all \(x,y\in E\) (\(\alpha>0\)), then \(u\)~is linear and consequently \(u\in\GO(E)\).
+\item If \(u:E\to E\) is a bijective function such that \(d(u(x),u(y))=\alpha d(x,y)\) for all \(x,y\in E\) (\(\alpha>0\)), then \(u\)~is affine and consequently \(u\in\Sm(E)\).
+\item If \(u\in\GL(E)\) is such that \(\innerprod{x}{y}=0\) implies \(\innerprod{u(x)}{u(y)}=0\) (in other words, \(u\)~preserves orthogonality), then \(u\in\GO(E)\).
+\end{itemize}
+\begin{proof}\
+\begin{itemize}
+\item By direct computation,
+\begin{multline*}
+\innerprod{u(x+y)-u(x)-u(y)}{u(x+y)-u(x)-u(y)}=\\\alpha\innerprod{x+y-x-y}{x+y-x-y}=0
+\end{multline*}
+so \(u(x+y)-u(x)-u(y)=0\) by positive definiteness of the inner product. Similarly \(u(\xi x)-\xi u(x)=0\). Therefore \(u\)~is linear.
+\item Let \(v=t_{-u(0)}u\). Then \(v:E\to E\) is a bijective function and (5.1.1.5)
+\begin{align*}
+2\innerprod{v(x)}{v(y)}&=\norm{v(x)}^2+\norm{v(y)}^2-\norm{v(x)-v(y)}^2\\
+	&=\norm{u(x)-u(0)}^2+\norm{u(y)-u(0)}^2-\norm{u(x)-u(y)}^2\\
+	&=\alpha^2(\norm{x}^2+\norm{y}^2-\norm{x-y}^2)\\
+	&=2\alpha^2\innerprod{x}{y}
+\end{align*}
+Therefore \(v\in\GO(E)\) by the previous item and \(u\in\Sm(E)\) (5.1.14).
+\item First observe that \(\innerprod{u(x)}{u(y)}=0\) implies \(\innerprod{x}{y}=0\). Indeed, if \(y=0\) this is trivial. If \(y\ne 0\), then \(x=\xi y+z\) with \(\innerprod{z}{y}=0\) (5.1.7) and
+\begin{align*}
+0&=\innerprod{u(x)}{u(y)}\\
+	&=\innerprod{u(\xi y+z)}{u(y)}&&\\
+	&=\innerprod{\xi u(y)+u(z)}{u(y)}&&\\
+	&=\xi\norm{u(y)}^2&&\text{since }\innerprod{u(z)}{u(y)}=0
+\end{align*}
+Since \(u(y)\ne 0\), this implies \(\xi=0\), so \(x=z\) and \(\innerprod{x}{y}=0\).
+
+Now if \(y\ne 0\), it follows that \(\innerprod{u(x)}{u(y)}=0\) is another equation of the hyperplane \(\innerprod{x}{y}=0\) orthogonal to~\(y\), so (3.3.6) there is \(\mu_y>0\) with
+\[\innerprod{u(x)}{u(y)}=\mu_y\innerprod{x}{y}\]
+for all \(x\in E\). We claim that \(\mu_y\)~is independent of~\(y\). Indeed, if \(y'=0\) then trivially \(\innerprod{u(x)}{u(y')}=\mu_y\innerprod{x}{y'}\) for all \(x\in E\). If \(\innerprod{y}{y'}\ne 0\), then
+\[\mu_{y}=\frac{\innerprod{u(y)}{u(y')}}{\innerprod{y}{y'}}=\mu_{y'}\]
+Finally, if \(y'\ne 0\) and \(\innerprod{y}{y'}=0\), then \(\innerprod{y}{y+y'}\ne 0\) and \(\innerprod{y'}{y+y'}\ne 0\), so
+\[\mu_y=\mu_{y+y'}=\mu_{y'}\]
+by the previous case.\qedhere
+\end{itemize}
+\end{proof}
+\end{exer}
 
 % References
 \begin{thebibliography}{0}
