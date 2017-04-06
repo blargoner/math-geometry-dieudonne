@@ -13,9 +13,12 @@
 \newcommand{\after}{\circ}
 \newcommand{\mult}{\cdot}
 
+\let\O\undefined % for want of \RedeclareMathOperator
+
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
 \DeclareMathOperator{\GO}{\mathbf{GO}}
+\DeclareMathOperator{\O}{\mathbf{O}}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
 \DeclareMathOperator{\Sm}{\mathbf{Sm}}
 \DeclareMathOperator{\rank}{rank}
@@ -583,6 +586,17 @@ by the previous case.\qedhere
 \end{itemize}
 \end{proof}
 \end{exer}
+
+\begin{exer}[7]
+In~\(\GL(E)\), the normalizer of~\(\O(E)\) is~\(\GO(E)\).
+\end{exer}
+\begin{proof}
+The normalizer contains~\(\GO(E)\) since if \(v\in\GO(E)\) and \(u\in\O(E)\), then \(\mu(vu\inv{v})=1\) (5.1.12.3), so \(vu\inv{v}\in\O(E)\).
+
+Conversely, suppose \(v\in\GL(E)\) normalizes~\(\O(E)\). If \(\innerprod{x}{y}=0\) and \(x=0\), then trivially \(\innerprod{v(x)}{v(y)}=0\). If \(x\ne 0\), let \(u\in\O(E)\) be the symmetry about the hyperplane orthogonal to~\(x\), so \(u(x)=-x\) and \(u(y)=y\). Then \(vu\inv{v}\in\O(E)\) by hypothesis and \(vu\inv{v}v=vu\), so
+\[\innerprod{v(x)}{v(y)}=\innerprod{v(u(x))}{v(u(y))}=-\innerprod{v(x)}{v(y)}\]
+and hence \(\innerprod{v(x)}{v(y)}=0\). Since \(x,y\) were arbitrary, it follows that \(v\)~preserves orthogonality, and therefore \(v\in\GO(E)\) (Exercise~6).
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
