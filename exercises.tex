@@ -5,6 +5,8 @@
 
 \newcommand{\R}{\mathbf{R}}
 \newcommand{\Rnz}{\R^*}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\B}{\mathcal{B}}
 
 \newcommand{\iso}{\cong}
 
@@ -15,6 +17,7 @@
 
 \let\O\undefined % for want of \RedeclareMathOperator
 
+\DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
 \DeclareMathOperator{\GO}{\mathbf{GO}}
@@ -29,6 +32,7 @@
 \newcommand{\abs}[1]{|{#1}|}
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 \newcommand{\innerprod}[2]{({#1}\;|\;{#2})}
+\newcommand{\conj}[1]{\overline{#1}}
 
 % Theorems
 \theoremstyle{definition}
@@ -597,6 +601,26 @@ Conversely, suppose \(v\in\GL(E)\) normalizes~\(\O(E)\). If \(\innerprod{x}{y}=0
 \[\innerprod{v(x)}{v(y)}=\innerprod{v(u(x))}{v(u(y))}=-\innerprod{v(x)}{v(y)}\]
 and hence \(\innerprod{v(x)}{v(y)}=0\). Since \(x,y\) were arbitrary, it follows that \(v\)~preserves orthogonality, and therefore \(v\in\GO(E)\) (Exercise~6).
 \end{proof}
+
+\subsection*{Section~2}
+\begin{rmk}
+In~(5.2.3), the mapping \(f\mapsto a\) is actually a vector space \emph{isomorphism} from the dual space~\(\dual{E}\) to~\(E\). In fact, if \(\{a_1,a_2\}\)~is an orthonormal basis of~\(E\), then the isomorphism is just that determined by \(\dual{a_i}\mapsto a_i\), where \(\{\dual{a_1},\dual{a_2}\}\) is the dual basis (4.1.15).
+\end{rmk}
+
+\begin{rmk}
+In~(5.2.4), we have vector space isomorphisms
+\[\B(E,E;\R)\iso\Hom(E,\dual{E})\iso\End(E)\]
+\end{rmk}
+
+\begin{rmk}
+In the complex plane~\(\C\), a number \(z\in\C\) induces an endomorphism through multiplication, and its conjugate~\(\conj{z}\) induces the adjoint endomorphism. Note \(\conj{\conj{z}}=z\) as in~(5.2.5.2), \(\conj{wz}=\conj{w}\ \conj{z}\) as in~(5.2.5.3), \(\conj{z}z=\abs{z}^2\) is the ``multiplicator'' of~\(z\) as in~(5.2.5.5), and \(z\)~is ``orthogonal'' if it is on the unit circle.
+
+Endomorphisms of a plane can therefore be viewed as generalized complex numbers, with adjoints as generalized complex conjugates. This idea is made precise in~(5.5).
+\end{rmk}
+
+\begin{rmk}
+In~(5.2.8), \(M(w)=(\alpha_{ij})\) with \(\alpha_{11}=\alpha_{22}=0\) and \(\alpha_{12}=-\alpha_{21}\) relative to an orthonormal basis (5.2.6), so \(\det(w)=\alpha_{12}^2\) (4.2.9.2). Since \(w\ne 0\), \(\det(w)>0\) and \(w\)~is invertible (4.2.8).
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
