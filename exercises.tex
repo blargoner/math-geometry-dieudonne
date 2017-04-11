@@ -33,6 +33,7 @@
 \newcommand{\norm}[1]{\lVert{#1}\rVert}
 \newcommand{\innerprod}[2]{({#1}\;|\;{#2})}
 \newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\adj}[1]{#1^*}
 
 % Theorems
 \theoremstyle{definition}
@@ -621,6 +622,35 @@ Endomorphisms of a plane can therefore be viewed as generalized complex numbers,
 \begin{rmk}
 In~(5.2.8), \(M(w)=(\alpha_{ij})\) with \(\alpha_{11}=\alpha_{22}=0\) and \(\alpha_{12}=-\alpha_{21}\) relative to an orthonormal basis (5.2.6), so \(\det(w)=\alpha_{12}^2\) (4.2.9.2). Since \(w\ne 0\), \(\det(w)>0\) and \(w\)~is invertible (4.2.8).
 \end{rmk}
+
+\begin{exer}[1]
+If \(u\in\GL(E)\) is an involution, then \(u\in\O(E)\) if and only if \(u\)~is self-adjoint. If \(p\in\End(E)\) is idempotent, then \(p\)~is an orthogonal projection (5.1.6) if and only if \(p\)~is self-adjoint.
+\end{exer}
+\begin{proof}
+By~(5.2.5.6), \(u\in\O(E)\) if and only if \(\adj{u}=\inv{u}=u\). By Exercise~3.2.1, \(p\)~is the projection onto~\(p(E)\) in the direction of~\(\kerz{p}\). If \(p(E)\)~is orthogonal to~\(\kerz{p}\), then
+\begin{align*}
+\innerprod{p(x)}{y}&=\innerprod{p(x)}{p(y)+(y-p(y))}&&\\
+	&=\innerprod{p(x)}{p(y)}&&\text{since }\innerprod{p(x)}{y-p(y)}=0\\
+	&=\innerprod{p(x)+(x-p(x))}{p(y)}&&\text{since }\innerprod{x-p(x)}{p(y)}=0\\
+	&=\innerprod{x}{p(y)}
+\end{align*}
+for all \(x,y\in E\). Therefore \(\adj{p}=p\). Conversely if \(\adj{p}=p\), then for all \(x\in E\) and \(y\in\kerz{p}\),
+\[\innerprod{p(x)}{y}=\innerprod{x}{p(y)}=\innerprod{x}{0}=0\]
+so \(p(E)\)~is orthogonal to~\(\kerz{p}\).
+\end{proof}
+
+\begin{exer}[8]
+Suppose \(u\in\End(E)\) has eigenvalues \(\lambda_1\ne\lambda_2\) with corresponding eigenvectors \(a_1,a_2\). If \(b_1\) (resp. \(b_2\)) is nonzero and orthogonal to~\(a_1\) (resp. \(a_2\)), then \(b_1\) (resp. \(b_2\)) is an eigenvector of~\(\adj{u}\) corresponding to~\(\lambda_2\) (resp. \(\lambda_1\)).
+\end{exer}
+\begin{proof}
+Since \(\lambda_1\ne\lambda_2\), \(\{a_1,a_2\}\)~must be linearly independent and hence a basis. If \(\innerprod{a_1}{x}=\innerprod{a_1}{y}\) and \(\innerprod{a_2}{x}=\innerprod{a_2}{y}\), then for any \(z=\alpha_1a_1+\alpha_2a_2\),
+\[\innerprod{z}{x}=\alpha_1\innerprod{a_1}{x}+\alpha_2\innerprod{a_2}{x}=\alpha_1\innerprod{a_1}{y}+\alpha_2\innerprod{a_2}{y}=\innerprod{z}{y}\]
+and it follows that \(x=y\).
+
+Now observe that for \(z=a_1,a_2\),
+\[\innerprod{z}{\adj{u}(b_1)}=\innerprod{u(z)}{b_1}=\lambda_2\innerprod{z}{b_1}=\innerprod{z}{\lambda_2 b_1}\]
+so \(\adj{u}(b_1)=\lambda_2b_1\). Similarly \(\adj{u}(b_2)=\lambda_1b_2\).
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
