@@ -20,10 +20,14 @@
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\GL}{\mathbf{GL}}
+\DeclareMathOperator{\GLp}{\GL^+}
+\DeclareMathOperator{\SL}{\mathbf{SL}}
 \DeclareMathOperator{\GO}{\mathbf{GO}}
+\DeclareMathOperator{\GOp}{\GO^+}
 \DeclareMathOperator{\O}{\mathbf{O}}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
 \DeclareMathOperator{\Sm}{\mathbf{Sm}}
+\DeclareMathOperator{\Is}{\mathbf{Is}}
 \DeclareMathOperator{\rank}{rank}
 
 \newcommand{\inv}[1]{#1^{-1}}
@@ -480,7 +484,7 @@ Without loss of generality, we may assume that \(S\)~is centered at the origin w
 
 \begin{exer}[4]
 \emph{Powers and coorthogonal spheres:}
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
 \item Let \(S\)~be a sphere centered at~\(c\) with radius~\(\rho\). If \(a\in E\) with \(\delta=d(a,c)\) and \(D\)~is a line through~\(a\) meeting~\(S\) at distinct points \(x_1,x_2\), then
 \[\innerprod{x_1-a}{x_2-a}=\delta^2-\rho^2\]
 If instead \(D\)~meets \(S\) at the single point~\(x\), then
@@ -496,7 +500,7 @@ If instead \(D\)~meets \(S\) at the single point~\(x\), then
 \end{itemize}
 \end{exer}
 \begin{proof}\
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
 \item Without loss of generality, we may assume that \(c=0\). In the first case, let \(b=\tfrac{1}{2}(x_1+x_2)\) and \(y=\tfrac{1}{2}(x_1-x_2)\). Then
 \[\innerprod{b}{y}=\tfrac{1}{4}(\norm{x_1}^2-\norm{x_2}^2)=\tfrac{1}{4}(\rho^2-\rho^2)=0\]
 Since \(y\)~is a direction vector of~\(D\), it follows that \(b\)~is perpendicular to~\(D\). Now \(x_1=b+y\) and \(x_2=b-y\), so \(x_1-a=(b-a)+y\) and \(x_2-a=(b-a)-y\), hence
@@ -552,13 +556,13 @@ so clearly (a),(b)\(\iff\)(d).\qedhere
 
 \begin{exer}[6]
 \emph{Characterization of similitudes:}
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
 \item If \(u:E\to E\) is a bijective function such that \(\innerprod{u(x)}{u(y)}=\alpha\innerprod{x}{y}\) for all \(x,y\in E\) (\(\alpha>0\)), then \(u\)~is linear and consequently \(u\in\GO(E)\).
 \item If \(u:E\to E\) is a bijective function such that \(d(u(x),u(y))=\alpha d(x,y)\) for all \(x,y\in E\) (\(\alpha>0\)), then \(u\)~is affine and consequently \(u\in\Sm(E)\).
 \item If \(u\in\GL(E)\) is such that \(\innerprod{x}{y}=0\) implies \(\innerprod{u(x)}{u(y)}=0\) (in other words, \(u\)~preserves orthogonality), then \(u\in\GO(E)\).
 \end{itemize}
 \begin{proof}\
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
 \item By direct computation,
 \begin{multline*}
 \innerprod{u(x+y)-u(x)-u(y)}{u(x+y)-u(x)-u(y)}=\\\alpha\innerprod{x+y-x-y}{x+y-x-y}=0
@@ -614,7 +618,7 @@ In~(5.2.4), we have vector space isomorphisms
 \end{rmk}
 
 \begin{rmk}
-In the complex plane~\(\C\), a number \(z\in\C\) induces an endomorphism through multiplication, and its conjugate~\(\conj{z}\) induces the adjoint endomorphism. Note \(\conj{\conj{z}}=z\) as in~(5.2.5.2), \(\conj{wz}=\conj{w}\ \conj{z}\) as in~(5.2.5.3), \(\conj{z}z=\abs{z}^2\) is the ``multiplicator'' of~\(z\) as in~(5.2.5.5), and \(z\)~is ``orthogonal'' if it is on the unit circle. If \(z\ne 0\), then \(z=\rho u\) with \(\rho=\abs{z}>0\) and \(u=z/\abs{z}\) on the unit circle uniquely determined, as in~(5.1.12).
+In the complex plane~\(\C\), a number \(z\in\C\) induces an endomorphism through multiplication, and its conjugate~\(\conj{z}\) induces the adjoint endomorphism. Note \(\conj{\conj{z}}=z\) as in~(5.2.5.2), \(\conj{wz}=\conj{w}\ \conj{z}\) as in~(5.2.5.3), \(\conj{z}z=\abs{z}^2\) is the ``multiplicator'' of~\(z\) as in~(5.2.5.5), and \(z\)~is ``orthogonal'' if it is on the unit circle. If \(z\ne 0\), then \(z=\rho u\) with \(\rho=\abs{z}>0\) and \(u=z/\abs{z}\) on the unit circle uniquely determined, as in the polar decomposition~(5.1.12).
 
 Endomorphisms of a plane can therefore be viewed as generalized complex numbers, with adjoints as generalized complex conjugates. This idea is made precise in~(5.5).
 \end{rmk}
@@ -651,6 +655,33 @@ Now observe that for \(z=a_1,a_2\),
 \[\innerprod{z}{\adj{u}(b_1)}=\innerprod{u(z)}{b_1}=\lambda_2\innerprod{z}{b_1}=\innerprod{z}{\lambda_2 b_1}\]
 so \(\adj{u}(b_1)=\lambda_2b_1\). Similarly \(\adj{u}(b_2)=\lambda_1b_2\).
 \end{proof}
+
+\subsection*{Section~3}
+\begin{rmk}
+In~(5.3.1), if we fix an \emph{orientation} of the plane (4.3.1), then a similitude preserves orientation if it is direct and reverses orientation if it is inverse (4.3.2). In other words, \(\GOp(E)=\GO(E)\sect\GLp(E)\). If \(u\in\GO(E)\), then the following are equivalent:
+\begin{itemize}[itemsep=0pt]
+\item \(u\)~is a rotation
+\item \(u\)~preserves length and orientation
+\item \(u\)~preserves length and oriented area\footnote{By definition, \(u\)~preserves oriented area if \(u\in\SL(E)\).}
+\item \(u\)~preserves orientation and oriented area
+\end{itemize}
+\end{rmk}
+
+\begin{rmk}
+By the polar decomposition (5.1.12) and~(5.3.2), an affine similitude of the plane is the composite of a translation after a linear scaling after a linear rotation or reflection. If the scaling is trivial, the similitude is an affine isometry; otherwise, it is a linear similitude about another origin (5.3.6).
+\end{rmk}
+
+\begin{rmk}
+We consider products of affine isometries \(u,v\in\Is(E)\) with \(u,v\ne 1\):
+\begin{itemize}[itemsep=0pt]
+\item If \(u\)~is a translation and \(v\)~is a rotation, then \(uv\)~is a rotation about another origin (5.3.7).
+\item If \(u\)~is a translation and \(v\)~is a reflection, then \(uv\)~is a glide reflection (5.3.7).
+\item If \(u\) and~\(v\) are rotations, then \(uv\)~is a translation or a rotation (5.3.7).
+\item If \(u\)~is a rotation and \(v\)~is a reflection, then \(uv\)~is a glide reflection (5.3.7).
+\item If \(u\) and~\(v\) are reflections in parallel lines, then \(uv\)~is a translation in a direction orthogonal to that of the lines (5.1.16).
+\item If \(u\) and~\(v\) are reflections in non-parallel lines, then \(uv\)~is a rotation about the point of intersection of the lines. This follows from~(5.3.2) after taking the origin at the point of intersection.
+\end{itemize}
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
