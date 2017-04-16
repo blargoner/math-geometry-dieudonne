@@ -25,6 +25,7 @@
 \DeclareMathOperator{\GO}{\mathbf{GO}}
 \DeclareMathOperator{\GOp}{\GO^+}
 \DeclareMathOperator{\O}{\mathbf{O}}
+\DeclareMathOperator{\Op}{\O^+}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
 \DeclareMathOperator{\Sm}{\mathbf{Sm}}
 \DeclareMathOperator{\Is}{\mathbf{Is}}
@@ -668,7 +669,7 @@ In~(5.3.1), if we fix an \emph{orientation} of the plane (4.3.1), then a similit
 \end{rmk}
 
 \begin{rmk}
-By the polar decomposition (5.1.12) and~(5.3.2), an affine similitude of the plane is the composite of a translation after a linear scaling after a linear rotation or reflection. If the scaling is trivial, the similitude is an affine isometry; otherwise, it is a linear similitude about another origin (5.3.6).
+By the polar decomposition (5.1.12) and~(5.3.2), an affine similitude of the plane is the composite of a translation after a linear scaling after a linear rotation or reflection. If the scaling is trivial, then the similitude is an affine isometry; otherwise, it is a linear similitude about another origin (5.3.6).
 \end{rmk}
 
 \begin{rmk}
@@ -682,6 +683,42 @@ We consider products of affine isometries \(u,v\in\Is(E)\) with \(u,v\ne 1\):
 \item If \(u\) and~\(v\) are reflections in non-parallel lines, then \(uv\)~is a rotation about the point of intersection of the lines. This follows from~(5.3.2) after taking the origin at the point of intersection.
 \end{itemize}
 \end{rmk}
+
+\begin{exer}[2]
+If \(u\in\End(E)\) is normal, then \(vu\inv{v}\)~is normal for all \(v\in\GO(E)\). Also, \(u\)~is self-adjoint or a direct similitude.
+\end{exer}
+\begin{proof}
+By~(5.2.5.5), \(\adj{v}v=\alpha\mult 1\) for some \(\alpha>0\), so \(\adj{v}=\alpha\inv{v}\), \(\adj{(\inv{v})}=\alpha^{-1}v\), and
+\begin{align*}
+\adj{(vu\inv{v})}vu\inv{v}&=\adj{(\inv{v})}\adj{u}\adj{v}vu\inv{v}&&\\
+	&=v\adj{u}\inv{v}vu\inv{v}&&\\
+	&=v\adj{u}u\inv{v}&&\\
+	&=vu\adj{u}\inv{v}&&\text{since \(u\)~is normal}\\
+	&=vu\inv{v}v\adj{u}\inv{v}&&\\
+	&=vu\inv{v}\adj{(vu\inv{v})}
+\end{align*}
+Therefore \(vu\inv{v}\)~is normal.
+
+If \(M(u)=(\alpha_{ij})\) relative to some fixed orthonormal basis, then \(M(\adj{u})=(\alpha_{ji})\) (5.2.6.3) and
+\[M(\adj{u})M(u)=M(\adj{u}u)=M(u\adj{u})=M(u)M(\adj{u})\]
+implies \(\alpha_{12}=\pm\alpha_{21}\) and \(\alpha_{11}(\alpha_{12}-\alpha_{21})=\alpha_{22}(\alpha_{12}-\alpha_{21})\). If \(\alpha_{12}=\alpha_{21}\), then \(M(u)\)~is symmetric and \(u\)~is self-adjoint. If \(\alpha_{12}\ne\alpha_{21}\), then \(\alpha_{12}=-\alpha_{21}\) and \(\alpha_{11}=\alpha_{22}\), so
+\[M(\adj{u}u)=(\alpha_{11}^2+\alpha_{12}^2)\mult 1=\det(u)\mult 1\]
+Therefore \(\adj{u}u=\det(u)\mult 1\), so \(u\)~is a direct similitude.
+\end{proof}
+
+\begin{exer}[5]
+Every affine isometry of the plane is the product of at most three reflections in lines. The product of two affine rotations is a translation if and only if the associated linear rotations are mutually inverse.
+\end{exer}
+\begin{proof}
+If \(u\in\Is(E)\), then by cases (5.3.7):
+\begin{itemize}[itemsep=0pt]
+\item If \(u\)~is the identity, then \(u\)~is trivially the product of zero reflections.
+\item If \(u\)~is a nonzero translation, then \(u\)~is the product of two reflections about lines perpendicular to the direction of translation (5.1.16).
+\item If \(u\)~is a rotation, then \(u\)~is the product of two reflections about lines intersecting at the center of the rotation (5.3.2).
+\item If \(u\)~is a glide reflection, then \(u\)~is a product of one or three reflections depending as the translation is zero or nonzero.
+\end{itemize}
+If \(u_1,u_2\in\Is(E)\) are affine rotations, then \(u_1=t_1v_1\) and \(u_2=t_2v_2\) where \(t_1,t_2\) are translations and \(v_1,v_2\in\Op(E)\). By (3.2.19.1), \(u_1u_2=tv_1v_2\), where \(t\)~is a translation, so \(u_1u_2\)~is a translation if and only if \(v_1v_2\)~is, which is true if and only if \(v_1v_2=1\).
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
