@@ -7,6 +7,7 @@
 \newcommand{\Rnz}{\R^*}
 \newcommand{\C}{\mathbf{C}}
 \newcommand{\B}{\mathcal{B}}
+\newcommand{\U}{\mathbf{U}}
 
 \newcommand{\iso}{\cong}
 
@@ -39,6 +40,7 @@
 \newcommand{\innerprod}[2]{({#1}\;|\;{#2})}
 \newcommand{\conj}[1]{\overline{#1}}
 \newcommand{\adj}[1]{#1^*}
+\newcommand{\ang}[2]{\widehat{(#1,#2)}}
 
 % Theorems
 \theoremstyle{definition}
@@ -610,6 +612,20 @@ and hence \(\innerprod{v(x)}{v(y)}=0\). Since \(x,y\) were arbitrary, it follows
 
 \subsection*{Section~2}
 \begin{rmk}
+In the plane, two lines are parallel if and only if there is a line to which they are both perpendicular; in this case, they are perpendicular to the same lines.
+\end{rmk}
+\begin{proof}
+Parallel lines have the same direction, hence are perpendicular to the same lines, in particular the vector line orthogonal to that direction. Conversely, if two lines are both perpendicular to a third, then their direction is the vector line orthogonal to the direction of the third, hence they are parallel (5.2.2).
+\end{proof}
+
+\begin{rmk}
+In the plane, a line is tangential to a circle at a point if and only if the line intersects the circle at the point and is perpendicular to the line passing through the point and the center of the circle.
+\end{rmk}
+\begin{proof}
+The forward direction is proved in Exercise~5.1.4. The reverse direction follows from Pythagoras (5.1.5).
+\end{proof}
+
+\begin{rmk}
 In~(5.2.3), the mapping \(f\mapsto a\) is actually a vector space \emph{isomorphism} from the dual space~\(\dual{E}\) to~\(E\). In fact, if \(\{a_1,a_2\}\)~is an orthonormal basis of~\(E\), then the isomorphism is just that determined by \(\dual{a_i}\mapsto a_i\), where \(\{\dual{a_1},\dual{a_2}\}\) is the dual basis (4.1.15).
 \end{rmk}
 
@@ -719,6 +735,17 @@ If \(u\in\Is(E)\), then by cases (5.3.7):
 \end{itemize}
 If \(u_1,u_2\in\Is(E)\) are affine rotations, then \(u_1=t_1v_1\) and \(u_2=t_2v_2\) where \(t_1,t_2\) are translations and \(v_1,v_2\in\Op(E)\). By (3.2.19.1), \(u_1u_2=tv_1v_2\), where \(t\)~is a translation, so \(u_1u_2\)~is a translation if and only if \(v_1v_2\)~is, which is true if and only if \(v_1v_2=1\).
 \end{proof}
+
+\subsection*{Section~4}
+\begin{rmk}
+In~(5.4.3), recall that \(\Psi(x,y)\)~is the \emph{oriented area} of the parallelogram determined by \(x\) and~\(y\) relative to the fixed orientation of the plane (see the remark on~(4.2.5) above). Therefore if \(u\)~is a rotation and \(x\)~is a unit vector, then \(\Psi(x,u(x))\)~is the signed distance from~\(u(x)\) to the line determined by~\(x\)---that is, the sine of the angle~\(\ang{x}{u(x)}\) of rotation.
+\end{rmk}
+
+\begin{rmk}
+In~(5.4.10), a line~\(D'\) passing through~\(-a_1\) is tangential to~\(\U\) if and only if it is parallel to~\(D\), by remarks from~(5.2) above. Therefore \(D'\)~meets \(\U\) at a unique point~\(x\) distinct from~\(-a_1\) if and only if it meets~\(D\) at a unique point~\(y\).
+
+For \(x\in\U'\), \(\innerprod{x}{x+a_1}=\innerprod{a_1}{x+a_1}\), so it follows from (5.1.7) and~(5.4.8) that the direction of~\(D_{-a_1,x}\) bisects \(\Delta_{0a_1}\) and~\(\Delta_{0x}\) and \(\ang{a_1}{x}=2\ang{a_1}{x+a_1}\). It is then immediate that \(x=\cos 2\theta\mult a_1+\sin 2\theta\mult a_2\) and \(y=\tan\theta\mult a_2\), where \(\theta=\ang{a_1}{x+a_1}\).
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
