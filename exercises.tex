@@ -31,6 +31,8 @@
 \DeclareMathOperator{\Sm}{\mathbf{Sm}}
 \DeclareMathOperator{\Is}{\mathbf{Is}}
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\sector}{S}
+\DeclareMathOperator{\osector}{S^{\circ}}
 
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\kerz}[1]{\inv{#1}(0)}
@@ -745,6 +747,14 @@ In~(5.4.3), recall that \(\Psi(x,y)\)~is the \emph{oriented area} of the paralle
 In~(5.4.10), a line~\(D'\) passing through~\(-a_1\) is tangential to~\(\U\) if and only if it is parallel to~\(D\), by remarks from~(5.2) above. Therefore \(D'\)~meets \(\U\) at a unique point~\(x\) distinct from~\(-a_1\) if and only if it meets~\(D\) at a unique point~\(y\).
 
 For \(x\in\U'\), \(\innerprod{x}{x+a_1}=\innerprod{a_1}{x+a_1}\), so it follows from (5.1.7) and~(5.4.8) that the direction of~\(D_{-a_1,x}\) bisects \(\Delta_{0a_1}\) and~\(\Delta_{0x}\) and \(\ang{a_1}{x}=2\ang{a_1}{x+a_1}\). It is then immediate that \(x=\cos 2\theta\mult a_1+\sin 2\theta\mult a_2\) and \(y=\tan\theta\mult a_2\), where \(\theta=\ang{a_1}{x+a_1}\).
+\end{rmk}
+
+\begin{rmk}
+In~(5.4.13), where \(\theta',\theta''\) correspond to~\(\Delta',\Delta''\), we have \(\theta'=\ang{-\Delta_0}{\Delta'}\) and \(\theta''=\ang{-\Delta_0}{\Delta''}\) (5.4.12), so
+\[\theta''-\theta'=-\theta'+\theta''=\ang{\Delta'}{-\Delta_0}+\ang{-\Delta_0}{\Delta''}=\ang{\Delta'}{\Delta''}\]
+Let \(x',x''\) be unit vectors in \(\Delta',\Delta''\). Then by (4.3.5) and~(5.4.9), \(\osector(\Delta',\Delta'')\)~is minor if and only if
+\[\sin(\theta''-\theta')=\sin\ang{\Delta'}{\Delta''}=\sin\ang{x'}{x''}=\Psi(x',x'')>0\]
+which is equivalent to \(\theta''-\theta'>0\) (5.4.12). Similarly, \(\osector(\Delta',\Delta'')\)~is major if and only if \(\theta''-\theta'<0\).
 \end{rmk}
 
 % References
