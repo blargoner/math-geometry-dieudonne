@@ -764,6 +764,22 @@ In the set of pairs of vector half-lines (resp. vector lines), the orbits under 
 By (5.4.7) and~(5.3.2).
 \end{proof}
 
+\subsection*{Section~5}
+\begin{exer}[3]
+\emph{Cayley's parametric representation:} If \(z\in\C\) with \(\abs{z}=1\) and \(z\ne -1\), then there exists \(\xi\in\R\) unique such that
+\[z=(1+\xi i)(1-\xi i)^{-1}\]
+\end{exer}
+\begin{proof}
+Let \(\theta=\arg z\), \(\xi=\tan(\theta/2)\), and \(w=1+\xi i\). By~(5.4.5.3),
+\begin{align*}
+w\conj{w}^{-1}&=\frac{w^2}{\abs{w}^2}\\
+	&=\frac{(1+\xi i)^2}{1+\xi^2}\\
+	&=\frac{1-\xi^2}{1+\xi^2}+\frac{2\xi}{1+\xi^2}i\\
+	&=\cos\theta+i\sin\theta=z
+\end{align*}
+If \(z=(1+\xi' i)(1-\xi' i)^{-1}\), direct computation shows \(\xi'=\xi\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Linear Algebra and Geometry.} Hermann, 1969.
