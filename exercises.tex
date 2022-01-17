@@ -780,6 +780,42 @@ w\conj{w}^{-1}&=\frac{w^2}{\abs{w}^2}\\
 If \(z=(1+\xi' i)(1-\xi' i)^{-1}\), direct computation shows \(\xi'=\xi\).
 \end{proof}
 
+\section*{Chapter~VI}
+\subsection*{Section~2}
+\begin{rmk}
+If \(\Phi\ne0\) is an alternating \emph{trilinear} form on~\(E\) and \(\Psi\)~is an alternating \emph{bilinear} form on~\(E\), then there is a unique vector \(v\in E\) with
+\[\Psi(x,y)=\Phi(x,y,v)\tag{1}\]
+for all vectors \(x,y\in E\).
+\end{rmk}
+\begin{proof}
+Define \(\varphi:E^3\to E\) by
+\[\varphi(x,y,z)=\Psi(y,z)x-\Psi(x,z)y+\Psi(x,y)z\tag{2}\]
+Then \(\varphi\)~is alternating and trilinear, so there is a vector~\(v\) with \(\varphi=\Phi\mult v\) (6.2.2.1). If \(x,y\) are linearly dependent, then both sides of~(1) are zero. Otherwise there is~\(z\) with \(\Phi(x,y,z)=1\) and \(\varphi(x,y,z)=v\). Now by~(2),
+\begin{align*}
+\Phi(x,y,v)&=\Phi(x,y,\varphi(x,y,z))\\
+	&=\Psi(y,z)\Phi(x,y,x)-\Psi(x,z)\Phi(x,y,y)+\Psi(x,y)\Phi(x,y,z)\\
+	&=\Psi(x,y)
+\end{align*}
+The vector~\(v\) is uniquely determined since \(\Phi\ne0\).
+\end{proof}
+\noindent This shows that any function measuring oriented area in planes in~\(E\) actually measures oriented volume relative to a fixed vector.
+
+\begin{exer}[11]
+Let \(\Psi\ne0\) be an alternating bilinear form on~\(E\) and
+\[N=\{\,x\in E\mid \Psi(x,y)=0\text{ for all }y\in E\,\}\]
+Then \(N\ne 0\) and there is a basis of~\(E\) relative to which
+\[M(\Psi)=\begin{pmatrix}
+0&-1&0\\
+1&0&0\\
+0&0&0
+\end{pmatrix}\]
+\end{exer}
+\begin{proof}
+Let \(\Phi\ne0\) be an alternating trilinear form on~\(E\). By the remark above, there is a unique vector~\(c\) with
+\[\Psi(x,y)=\Phi(x,y,c)\]
+for all vectors \(x,y\). Clearly \(N=D_{0c}\ne0\), and if \(a,b\) are chosen so \(\Phi(a,b,c)=-1\), then \(M(\Psi)\)~has the desired form relative to the basis \(a,b,c\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{dieudonne} Dieudonn\'e, J. \textit{Linear Algebra and Geometry.} Hermann, 1969.
