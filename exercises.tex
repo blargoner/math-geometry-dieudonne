@@ -15,6 +15,7 @@
 \newcommand{\sect}{\cap}
 \newcommand{\after}{\circ}
 \newcommand{\mult}{\cdot}
+\newcommand{\cross}{\times}
 
 \let\O\undefined % for want of \RedeclareMathOperator
 
@@ -814,6 +815,35 @@ Then \(N\ne 0\) and there is a basis of~\(E\) relative to which
 Let \(\Phi\ne0\) be an alternating trilinear form on~\(E\). By the remark above, there is a unique vector~\(c\) with
 \[\Psi(x,y)=\Phi(x,y,c)\]
 for all vectors \(x,y\). Clearly \(N=D_{0c}\ne0\), and if \(a,b\) are chosen so \(\Phi(a,b,c)=-1\), then \(M(\Psi)\)~has the desired form relative to the basis \(a,b,c\).
+\end{proof}
+
+\section*{Chapter~VII}
+\subsection*{Section~1}
+\begin{exer}[3]
+If \(u\in\GL(E)\), then
+\[\adj{u}(x\cross y)=\det(u)\mult\inv{u}(x)\cross\inv{u}(y)\tag{1}\]
+or equivalently
+\[\inv{u}(x\cross y)=(\det(u))^{-1}\mult\adj{u}(x)\cross\adj{u}(y)\tag{2}\]
+Moreover
+\[\adj{u}(u(x)\cross u(y))=\det(u)\mult x\cross y=u(\adj{u}(x)\cross\adj{u}(y))\tag{3}\]
+\end{exer}
+\begin{proof}
+Let~\(\Psi\) be as in~(7.1.7). For any vector~\(z\),
+\begin{align*}
+\innerprod{\adj{u}(x\cross y)}{z}&=\innerprod{x\cross y}{u(z)}\\
+	&=\Psi(x,y,u(z))\\
+	&=\Psi(u(\inv{u}(x)),u(\inv{u}(y)),u(z))\\
+	&=\det(u)\mult\Psi(\inv{u}(x),\inv{u}(y),z)\\
+	&=\det(u)\mult\innerprod{\inv{u}(x)\cross\inv{u}(y)}{z}\\
+	&=\innerprod{\det(u)\mult\inv{u}(x)\cross\inv{u}(y)}{z}
+\end{align*}
+Now (1)~follows from definiteness of the inner product.
+
+Substituting \(\adj{u}\) for~\(u\) in~(1) and noting that \(\adj{(\adj{u})}=u\) and \(\det(\adj{u})=\det(u)\), we obtain
+\[u(x\cross y)=\det(u)\mult\inv{(\adj{u})}(x)\cross\inv{(\adj{u})}(y)\tag{4}\]
+Now substituting \(\inv{u}\) for~\(u\) in~(4) and noting that \(\adj{(\inv{u})}=\inv{(\adj{u})}\), we obtain~(2). By reversing these steps, we obtain (1) from~(2).
+
+Finally, (3)~follows by substituting \(u(x)\) for~\(x\) and \(u(y)\) for~\(y\) in (1), and by substituting \(\adj{u}(x)\) for~\(x\) and \(\adj{u}(y)\) for~\(y\) in~(4). Note that (3)~is \emph{self-dual}, meaning it is invariant under substitution of \(\adj{u}\) for~\(u\).
 \end{proof}
 
 % References
