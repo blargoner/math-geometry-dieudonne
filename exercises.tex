@@ -819,6 +819,40 @@ for all vectors \(x,y\). Clearly \(N=D_{0c}\ne0\), and if \(a,b\) are chosen so 
 
 \section*{Chapter~VII}
 \subsection*{Section~1}
+\begin{exer}[1]
+Let \(a_1,a_2,a_3\) be an orthonormal basis of~\(E\), \(x_1,x_2,x_3\) vectors in~\(E\), and \(u\)~the endomorphism of~\(E\) with \(u(a_i)=x_i\). Define
+\[G(x_1,x_2,x_3)=\begin{vmatrix}
+\innerprod{x_1}{x_1}&\innerprod{x_1}{x_2}&\innerprod{x_1}{x_3}\\
+\innerprod{x_2}{x_1}&\innerprod{x_2}{x_2}&\innerprod{x_2}{x_3}\\
+\innerprod{x_3}{x_1}&\innerprod{x_3}{x_2}&\innerprod{x_3}{x_3}
+\end{vmatrix}\]
+Then
+\[G(x_1,x_2,x_3)=\det(u)^2=\Psi(x_1,x_2,x_3)^2\ge0\tag{1}\]
+where \(\Psi\)~is as in~(7.1.7).
+
+Similarly define
+\[G(x_1,x_2)=\begin{vmatrix}
+\innerprod{x_1}{x_1}&\innerprod{x_1}{x_2}\\
+\innerprod{x_2}{x_1}&\innerprod{x_2}{x_2}\\
+\end{vmatrix}\]
+Then
+\[G(x_1,x_2)=\norm{x_1\cross x_2}^2\tag{2}\]
+\end{exer}
+\begin{proof}
+Since
+\[\innerprod{x_i}{x_j}=\innerprod{u(a_i)}{u(a_j)}=\innerprod{a_i}{\adj{u}u(a_j)}\]
+it follows from~(7.1.1.4) that
+\[G(x_1,x_2,x_3)=\det(\adj{u}u)=\det(\adj{u})\det(u)=\det(u)^2\]
+On the other hand
+\[\det(u)=\Psi(u(a_1),u(a_2),u(a_3))=\Psi(x_1,x_2,x_3)\]
+which establishes~(1).
+
+If \(x_1,x_2\) are linearly dependent, then both sides of~(2) are zero. If \(x_1,x_2\) are linearly independent, let
+\[x_3=\frac{x_1\cross x_2}{\norm{x_1\cross x_2}}\]
+Then
+\[G(x_1,x_2)=G(x_1,x_2,x_3)=\Psi(x_1,x_2,x_3)^2=\norm{x_1\cross x_2}^2\qedhere\]
+\end{proof}
+
 \begin{exer}[3]
 If \(u\in\GL(E)\), then
 \[\adj{u}(x\cross y)=\det(u)\mult\inv{u}(x)\cross\inv{u}(y)\tag{1}\]
