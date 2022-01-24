@@ -28,6 +28,7 @@
 \DeclareMathOperator{\GOp}{\GO^+}
 \DeclareMathOperator{\O}{\mathbf{O}}
 \DeclareMathOperator{\Op}{\O^+}
+\DeclareMathOperator{\SO}{\mathbf{SO}}
 \DeclareMathOperator{\GA}{\mathbf{GA}}
 \DeclareMathOperator{\Sm}{\mathbf{Sm}}
 \DeclareMathOperator{\Is}{\mathbf{Is}}
@@ -63,6 +64,30 @@
 \section*{Introduction}
 This document contains notes and exercises from~\cite{dieudonne}.
 
+\subsection*{Groups}
+This table summarizes some important groups appearing in the book:\footnote{Legend: V = vector space, E = Euclidean (inner product) space, A = affine, O = oriented}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Group}&\textbf{Name}&\textbf{Context}&\textbf{Description}\\
+\hline
+\(\GL(E)\)&General linear group&V&Bijective linear maps\\
+\(\GA(E)\)&General affine group&V, A&Bijective affine maps\\
+\(\SL(E)\)&Special linear group&V&Linear maps with \(\det=1\)\\
+\(\GLp(E)\)&&V, O&Linear maps with \(\det>0\)\\
+\(\GO(E)\)&&E&Bijective linear similitudes\\
+\(\O(E)\)&Orthogonal group&E&Linear isometries\\
+\(\Sm(E)\)&&E, A&Bijective affine similitudes\\
+\(\Is(E)\)&Euclidean group&E, A&Affine isometries\\
+\(\GOp(E)\)&&E, O&Direct similitudes (\(\det>0\))\\
+\(\Op(E)\), \(\SO(E)\)&Rotation group, or&E, O&Rotations (\(\det=1\))\\
+&special orthogonal group&&\\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
 \section*{Chapter~III}
 \subsection*{Section~1}
 \begin{rmk}
